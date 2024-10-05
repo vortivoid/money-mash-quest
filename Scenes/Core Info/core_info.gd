@@ -1,6 +1,6 @@
 ### This script stores all the info in the game that should be saved when saving the game, as well as storing values for other scripts to access ###
 extends Node
-var gameVer = "Alpha 1.6.2"
+var gameVer = "Alpha 1.6.3"
 const save_path = "user://save.data"
 
 ## Saved variables (Values are just defaults and are replaced by contents of save file on load) ##
@@ -13,8 +13,8 @@ var mouseSteroidsOwned = 0
 var autoClickersOwned = 0
 
 # Coin Shop Prices
-var mouseSteroidsPrice = 100
-var autoClickersPrice = 50
+var mouseSteroidsPrice = 150
+var autoClickersPrice = 25
 
 # Gem Shop Items
 var MouseSteroidsUpgradeOwned = false
@@ -23,10 +23,10 @@ var planeOwned = false
 var gunOwned = false
 
 # Gem Shop Prices
-var mouseSteroidsUpgradePrice = 20
-var autoClickerUpgradePrice = 20
-var planePrice = 30
-var gunPrice = 10
+var mouseSteroidsUpgradePrice = 200
+var autoClickerUpgradePrice = 500
+var planePrice = 300
+var gunPrice = 100
 
 
 func save():
