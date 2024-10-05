@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_8y1ww"]
 [ext_resource type="Texture2D" uid="uid://be2elik1srlhh" path="res://Icons/Main/MoneyMouthEmoji.png" id="2_o41y6"]
 [ext_resource type="Script" path="res://Scenes/Main/MainCamera.gd" id="2_souws"]
-[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="2_v8bjd"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="2_v8bjd"]
 [ext_resource type="Texture2D" uid="uid://cqesbvxny8xjt" path="res://Icons/Main/10.jpg" id="6_kvrof"]
 [ext_resource type="Texture2D" uid="uid://gssa8bf510pq" path="res://Icons/Main/ScreamEmoji.png" id="7_isqho"]
 [ext_resource type="PackedScene" uid="uid://bwn4sx63iopgm" path="res://Scenes/Shop/shop.tscn" id="128_qdpqk"]
