@@ -38,8 +38,8 @@ func _on_buy_max_autoclicker_pressed():
 ## Updates all important variables in the shop, & updates CoreInfo variables
 func UpdateShop():
 	# Update item prices
-	CoreInfo.mouseSteroidsPrice = 100 * (CoreInfo.mouseSteroidsOwned + 1)
-	CoreInfo.autoClickersPrice = 50 * (CoreInfo.autoClickersOwned + 1)
+	CoreInfo.mouseSteroidsPrice = 150 * (CoreInfo.mouseSteroidsOwned + 1)
+	CoreInfo.autoClickersPrice = 25 * (CoreInfo.autoClickersOwned + 1)
 	
 	#Coin Display
 	$CoinIcon/CoinCount.text = str(CoreInfo.coins)
