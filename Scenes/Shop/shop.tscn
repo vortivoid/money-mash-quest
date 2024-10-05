@@ -1,0 +1,244 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwn4sx63iopgm"]
+
+[ext_resource type="Script" path="res://Scenes/Shop/shop.gd" id="1_nl6qo"]
+[ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_rxyrp"]
+[ext_resource type="Texture2D" uid="uid://5pm2e0wckrf" path="res://Icons/Shop/MouseSteroidsIcon.png" id="2_7rf2c"]
+[ext_resource type="Texture2D" uid="uid://wvy4ogcew6qv" path="res://Icons/Shop/AutoClickerIcon.png" id="3_6ok2j"]
+[ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="4_tlsxc"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nl6qo")
+
+[node name="MouseSteroids" type="Button" parent="."]
+layout_mode = 2
+offset_left = 175.0
+offset_top = 50.0
+offset_right = 335.0
+offset_bottom = 210.0
+tooltip_text = "Multiplies the number of coins you get per click"
+icon = ExtResource("2_7rf2c")
+expand_icon = true
+
+[node name="ItemName" type="RichTextLabel" parent="MouseSteroids"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = -41.0
+offset_right = 96.0
+offset_bottom = -5.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Mouse Steroids"
+
+[node name="CoinIcon" type="Sprite2D" parent="MouseSteroids"]
+position = Vector2(35, 189)
+scale = Vector2(0.09, 0.089)
+texture = ExtResource("1_rxyrp")
+
+[node name="ItemCost" type="RichTextLabel" parent="MouseSteroids/CoinIcon"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.323
+anchor_right = 3.159
+anchor_bottom = 0.704
+offset_left = -344.444
+offset_top = -349.697
+offset_right = -105.744
+offset_bottom = -319.397
+grow_horizontal = 2
+scale = Vector2(0.860303, 0.897695)
+theme_override_font_sizes/normal_font_size = 200
+text = "Value"
+
+[node name="OwnedNumLabel" type="Label" parent="MouseSteroids"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.002
+anchor_top = 0.387
+anchor_right = 1.562
+anchor_bottom = 0.525
+offset_left = -0.319992
+offset_top = 0.0799942
+offset_right = 0.0799866
+pivot_offset = Vector2(1, 2)
+theme_override_font_sizes/font_size = 15
+text = "Owned: Null"
+
+[node name="BuyMax" type="Button" parent="MouseSteroids"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.456
+anchor_top = 0.794
+anchor_right = -0.012
+anchor_bottom = 0.975
+offset_left = -0.0399933
+offset_top = -0.0400085
+offset_right = -0.079998
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 15
+text = "Buy Max"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AutoClicker" type="Button" parent="."]
+layout_mode = 2
+offset_left = 500.0
+offset_top = 50.0
+offset_right = 660.0
+offset_bottom = 210.0
+tooltip_text = "Each auto clicker clicks once per second for you
+(Unaffected by Mouse Steroids without Auto Clicker Upgrade (In Gem Shop))"
+icon = ExtResource("3_6ok2j")
+expand_icon = true
+
+[node name="ItemName" type="RichTextLabel" parent="AutoClicker"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = -38.0
+offset_right = 79.0
+offset_bottom = -2.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Auto-Clicker"
+
+[node name="CoinIcon" type="Sprite2D" parent="AutoClicker"]
+position = Vector2(32, 192)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("1_rxyrp")
+
+[node name="ItemCost" type="RichTextLabel" parent="AutoClicker/CoinIcon"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.341
+anchor_right = 3.175
+anchor_bottom = 0.722
+offset_left = -333.333
+offset_top = -349.81
+offset_right = -105.833
+offset_bottom = -319.51
+grow_horizontal = 2
+scale = Vector2(0.860303, 0.897695)
+theme_override_font_sizes/normal_font_size = 200
+text = "Value"
+
+[node name="OwnedNumLabel" type="Label" parent="AutoClicker"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0375
+anchor_top = 0.39725
+anchor_right = 1.59975
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -5.56
+offset_right = -1.96002
+offset_bottom = -1.52588e-05
+pivot_offset = Vector2(1, 3)
+theme_override_font_sizes/font_size = 15
+text = "Owned: Null"
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyMax" type="Button" parent="AutoClicker"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.45025
+anchor_top = 0.8
+anchor_right = -0.00625
+anchor_bottom = 1.0
+offset_left = 0.0400009
+offset_bottom = -2.0
+theme_override_font_sizes/font_size = 15
+text = "Buy Max"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Layout" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1049.0
+offset_top = 580.0
+offset_right = 1089.0
+offset_bottom = 620.0
+
+[node name="BackButton" type="Button" parent="Layout"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0001
+offset_top = -48.0
+offset_right = 45.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Back
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="GemShopButton" type="Button" parent="Layout"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.075
+anchor_top = -7.3
+anchor_right = 2.525
+anchor_bottom = -6.275
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Gem Shop       "
+metadata/_edit_use_anchors_ = true
+
+[node name="GemIcon" type="Sprite2D" parent="Layout/GemShopButton"]
+position = Vector2(124, 21)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_tlsxc")
+
+[node name="CoinIcon" type="Sprite2D" parent="."]
+position = Vector2(33, 620)
+scale = Vector2(0.0885714, 0.0885714)
+texture = ExtResource("1_rxyrp")
+
+[node name="CoinCount" type="RichTextLabel" parent="CoinIcon" groups=["coincounters"]]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 11.2905
+offset_top = -180.645
+offset_right = 12205.3
+offset_bottom = 361.355
+grow_horizontal = 2
+scale = Vector2(0.860303, 0.897695)
+theme_override_font_sizes/normal_font_size = 400
+text = "0"
+
+[node name="SHOP_DISCLAIMER" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 588.0
+offset_right = 818.0
+offset_bottom = 645.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 37
+text = "SHOP UNDER DEVELOPMENT!"
+
+[connection signal="pressed" from="MouseSteroids" to="." method="_on_mouse_steroids_pressed"]
+[connection signal="pressed" from="MouseSteroids/BuyMax" to="." method="_on_buy_max_mousesteroids_pressed"]
+[connection signal="pressed" from="AutoClicker" to="." method="_on_auto_clicker_pressed"]
+[connection signal="pressed" from="AutoClicker/BuyMax" to="." method="_on_buy_max_autoclicker_pressed"]
+[connection signal="pressed" from="Layout/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Layout/GemShopButton" to="." method="_on_gem_shop_button_pressed"]

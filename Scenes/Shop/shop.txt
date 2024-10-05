@@ -1,0 +1,105 @@
+extends Control
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	CoreInfo.mouseSteroidsPrice = round(CoreInfo.mouseSteroidsPrice * (1.5 ** CoreInfo.mouseSteroidsOwned))
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
+
+
+func _on_back_button_pressed():
+	get_tree().call_group("maincam", "switch")
+	$"../..".UpdateValues()
+
+
+#Mouse Steroids
+func _on_mouse_steroids_pressed():
+	if CoreInfo.coins >= CoreInfo.mouseSteroidsPrice: #Checks if you have enough coins to purchase the mouse steroids
+		CoreInfo.coins -= CoreInfo.mouseSteroidsPrice #Subtracts your money to match whatever the price was
+		CoreInfo.mouseSteroidsOwned += 1
+		CoreInfo.mouseSteroidsPrice = round(100 * (1.5 ** CoreInfo.mouseSteroidsOwned)) #Changes price of steroids based on how many you own already
+		UpdateShopLabels()
+		
+func _on_buy_max_mousesteroids_pressed():
+	while CoreInfo.coins >= CoreInfo.mouseSteroidsPrice:
+		_on_mouse_steroids_pressed()
+
+
+#Auto-Clicker
+func _on_auto_clicker_pressed():
+	if CoreInfo.coins >= CoreInfo.autoClickersPrice:
+		CoreInfo.coins -= CoreInfo.autoClickersPrice
+		CoreInfo.autoClickersOwned += 1
+		CoreInfo.autoClickersPrice = round(100 * (1.5 ** CoreInfo.autoClickersOwned))
+		UpdateShopLabels()
+
+func _on_buy_max_autoclicker_pressed():
+	while CoreInfo.coins >= CoreInfo.autoClickersPrice:
+		_on_auto_clicker_pressed()
+
+
+func _on_gem_pressed():
+	if CoreInfo.coins >= CoreInfo.gemsPrice:
+		CoreInfo.coins -= CoreInfo.gemsPrice
+		CoreInfo.gemsOwned += 1
+		UpdateShopLabels()
+
+func _on_buy_max_gem_pressed():
+	while CoreInfo.coins >= CoreInfo.gemsPrice:
+		_on_gem_pressed()
+
+
+
+func _on_plane_pressed():
+	if CoreInfo.planeOwned == true:
+		print("You already own this item!")
+	else:
+		if CoreInfo.coins >= CoreInfo.planePrice:
+			CoreInfo.coins -= CoreInfo.planePrice
+			CoreInfo.planeOwned = true
+			UpdateShopLabels()
+
+
+func _on_literally_a_gun_pressed():
+	if CoreInfo.gunOwned == true:
+		print("You already own this item!")
+	else:
+		if CoreInfo.coins >= CoreInfo.gunPrice:
+			CoreInfo.coins -= CoreInfo.gunPrice
+			CoreInfo.gunOwned = true
+			UpdateShopLabels()
+
+
+
+func UpdateShopLabels(): ### Updates all important variables in the shop such as labels displaying item costs ###
+	
+	#Coin Display
+	$CoinIcon/CoinCount.text = str(CoreInfo.coins)
+	
+	#Owned Number Labels
+	$ShopItems/MouseSteroids/OwnedNumLabel.text = str("Have: " + str(CoreInfo.mouseSteroidsOwned))
+	$ShopItems/AutoClicker/OwnedNumLabel.text = str("Have: " + str(CoreInfo.autoClickersOwned))
+	$ShopItems/Gem/OwnedNumLabel.text = str("Have: " + str(CoreInfo.gemsOwned))
+	$ShopItems/Plane/OwnedNumLabel.text = str("Not Owned")
+	$"ShopItems/Literally A Gun/OwnedNumLabel".text = str("Not Owned")
+	
+	#Price Labels
+	$ShopItems/MouseSteroids/CoinIcon/ItemCost.text = str(CoreInfo.mouseSteroidsPrice)
+	$ShopItems/AutoClicker/CoinIcon/ItemCost.text = str(CoreInfo.autoClickersPrice)
+	$ShopItems/Gem/CoinIcon/ItemCost.text = str(CoreInfo.gemsPrice)
+	
+	#One-time purchase owned text
+	
+	#Plane
+	if CoreInfo.planeOwned == true:
+		$ShopItems/Plane/CoinIcon/ItemCost.text = "Already Owned!"
+	else:
+		$ShopItems/Plane/CoinIcon/ItemCost.text = str(CoreInfo.planePrice)
+		
+	#Gun
+	if CoreInfo.gunOwned == true:
+		$"ShopItems/Literally A Gun/CoinIcon/ItemCost".text = "Already Owned!"
+	else:
+		$"ShopItems/Literally A Gun/CoinIcon/ItemCost".text = str(CoreInfo.gunPrice)

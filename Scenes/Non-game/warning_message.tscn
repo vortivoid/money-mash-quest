@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://2q2vnpilk0n6"]
+
+[ext_resource type="Script" path="res://Scenes/Non-game/warning_message.gd" id="1_1l338"]
+
+[node name="WarningMessage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1l338")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.0
+offset_top = -224.0
+offset_right = 470.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "WARNING!
+
+This is a debugging error message, you should not be seeing this.
+
+If you see this then I did a fucky wucky in the code bc i'm stupid lol
+
+Please report this if you can! Anyways, you can continue by pressing the button below! :3"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Continue" type="Button" parent="Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.559
+anchor_right = 0.464
+anchor_bottom = 0.611
+offset_left = 11.86
+offset_top = 192.635
+offset_right = 127.84
+offset_bottom = 218.415
+theme_override_font_sizes/font_size = 21
+text = "Continue Anyway?"
+
+[node name="Exit" type="Button" parent="Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.559
+anchor_right = 0.464
+anchor_bottom = 0.611
+offset_left = 21.86
+offset_top = 240.635
+offset_right = 120.244
+offset_bottom = 266.415
+theme_override_font_sizes/font_size = 21
+text = "Exit"
+
+[connection signal="pressed" from="Text/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Text/Exit" to="." method="_on_exit_pressed"]
