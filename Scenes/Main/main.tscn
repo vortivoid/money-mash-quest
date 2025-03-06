@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://c4yj3ruae1o2a"]
 
-[ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_8y1ww"]
-[ext_resource type="Texture2D" uid="uid://be2elik1srlhh" path="res://Icons/Main/MoneyMouthEmoji.png" id="2_o41y6"]
-[ext_resource type="Script" path="res://Scenes/Main/MainCamera.gd" id="2_souws"]
+[ext_resource type="Script" uid="uid://bnf5bpphmcvd" path="res://Scenes/Main/main.gd" id="1_8y1ww"]
+[ext_resource type="Script" uid="uid://bs5bww03eoy5k" path="res://Scenes/Main/MainCamera.gd" id="2_souws"]
 [ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="2_v8bjd"]
 [ext_resource type="Texture2D" uid="uid://cqesbvxny8xjt" path="res://Icons/Main/10.jpg" id="6_kvrof"]
+[ext_resource type="Texture2D" uid="uid://dj5npoy0uxnkv" path="res://Icons/Main/mmq-money-icon.png" id="7_hfg1r"]
 [ext_resource type="Texture2D" uid="uid://gssa8bf510pq" path="res://Icons/Main/ScreamEmoji.png" id="7_isqho"]
 [ext_resource type="PackedScene" uid="uid://bwn4sx63iopgm" path="res://Scenes/Shop/shop.tscn" id="128_qdpqk"]
 [ext_resource type="PackedScene" uid="uid://b8eoa8usrok3e" path="res://Scenes/Casino/casino.tscn" id="130_2dwlq"]
@@ -39,6 +39,7 @@ offset_top = -287.0
 offset_right = 574.0
 offset_bottom = -224.0
 grow_horizontal = 2
+metadata/_edit_lock_ = true
 
 [node name="Text" type="Label" parent="MainCamera/LeaderboardTitle"]
 layout_mode = 1
@@ -47,16 +48,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.5
-offset_top = -29.0
-offset_right = 92.5
-offset_bottom = 29.0
+offset_left = -91.5
+offset_top = -28.5
+offset_right = 93.5
+offset_bottom = 58.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 19
 text = "Totally Real
 Leaderboard:
 "
+metadata/_edit_lock_ = true
 
 [node name="FakeLeaderboard" type="Panel" parent="MainCamera"]
 anchors_preset = 5
@@ -65,7 +67,7 @@ anchor_right = 0.5
 offset_left = 336.0
 offset_top = -218.0
 offset_right = 574.0
-offset_bottom = 187.0
+offset_bottom = 273.0
 grow_horizontal = 2
 
 [node name="Names" type="Label" parent="MainCamera/FakeLeaderboard"]
@@ -76,18 +78,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -111.0
-offset_top = -193.5
+offset_top = -245.5
 offset_right = 112.0
-offset_bottom = 192.5
+offset_bottom = 244.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_spacing = -4
 theme_override_font_sizes/font_size = 15
 text = "Dereton: Infinity
 
-Charlac: <null>
+Charlac: ☭
 
-Trixie: 7777777
+Skye: 7777777
 
 DrAgOn Ninja 
 James XYZmoc
@@ -95,15 +97,21 @@ The Meme Thief: 177013
 
 Finnfx: 42069
 
+Rev: 1714
+
 Kc: 211
 
 CharlieCringe: 123
 
-Impy Wimpy: 65
+Longing String: 65
 
-Neemond: -0
+Thon: Seventen
 
-Rug: -1"
+Kneemund: -0
+
+Rug: -1
+
+Goaty: N/A"
 
 [node name="CoinDisplay" type="Panel" parent="MainCamera"]
 anchors_preset = 5
@@ -123,12 +131,13 @@ anchor_right = 0.5
 offset_left = -101.5
 offset_top = 18.0
 offset_right = 574.5
-offset_bottom = 76.0
+offset_bottom = 131.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "0 (broke ass💀)
 "
 clip_text = true
+metadata/_edit_lock_ = true
 
 [node name="10" type="Sprite2D" parent="MainCamera"]
 position = Vector2(-547, -168)
@@ -172,29 +181,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -213.0
-offset_top = -75.0
-offset_right = 211.0
-offset_bottom = 75.0
+offset_left = -192.0
+offset_top = -199.0
+offset_right = 196.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(194, 203)
 theme_override_font_sizes/font_size = 40
-text = "Press for Coins!"
+icon = ExtResource("7_hfg1r")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainCamera/Main Button"]
 position = Vector2(-364, -249)
 stream = ExtResource("2_v8bjd")
 volume_db = 9.964
-
-[node name="MoneyMouthEmoji2" type="Sprite2D" parent="MainCamera/Main Button"]
-position = Vector2(483, 75)
-scale = Vector2(0.21, 0.207)
-texture = ExtResource("2_o41y6")
-
-[node name="MoneyMouthEmoji" type="Sprite2D" parent="MainCamera/Main Button"]
-position = Vector2(-57, 75)
-scale = Vector2(0.21, 0.207)
-texture = ExtResource("2_o41y6")
 
 [node name="SaveData" type="Button" parent="MainCamera"]
 anchors_preset = 8
@@ -315,6 +318,10 @@ autostart = true
 wait_time = 30.0
 
 [connection signal="pressed" from="MainCamera/ScreamEmoji/FreeRobux" to="." method="_on_secret_button_pressed"]
+[connection signal="button_down" from="MainCamera/Main Button" to="." method="_on_main_button_button_down"]
+[connection signal="button_up" from="MainCamera/Main Button" to="." method="_on_main_button_button_up"]
+[connection signal="mouse_entered" from="MainCamera/Main Button" to="." method="_on_main_button_mouse_entered"]
+[connection signal="mouse_exited" from="MainCamera/Main Button" to="." method="_on_main_button_mouse_exited"]
 [connection signal="pressed" from="MainCamera/Main Button" to="." method="_on_main_button_pressed"]
 [connection signal="pressed" from="MainCamera/SaveData" to="." method="_on_save_data_pressed"]
 [connection signal="pressed" from="MainCamera/ShopButton" to="." method="_on_shop_button_pressed"]

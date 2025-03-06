@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqeqmesqlhd1d"]
 
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_0edds"]
-[ext_resource type="Script" path="res://Scenes/Shop/gem_shop.gd" id="1_jygbo"]
+[ext_resource type="Script" uid="uid://e1cv5pryduii" path="res://Scenes/Shop/gem_shop.gd" id="1_jygbo"]
 [ext_resource type="Texture2D" uid="uid://7ia6hbpwp5r1" path="res://Icons/Shop/Planeicon.png" id="4_c15rh"]
 [ext_resource type="Texture2D" uid="uid://cycwf88n87lw7" path="res://Icons/Shop/MouseSteroidsUpgrade.png" id="4_k1jnj"]
 [ext_resource type="Texture2D" uid="uid://bemuu166lbeye" path="res://Icons/Shop/AutoClickerUpgrade.png" id="5_ik7nt"]

@@ -118,3 +118,19 @@ func _on_autosave_timeout() -> void:
 	CoreInfo.save()
 	print("Autosave complete!")
 	$AutosaveTimer.start()
+
+
+func _on_main_button_mouse_entered() -> void:
+	$"MainCamera/Main Button".scale += Vector2(0.2, 0.2)
+
+
+func _on_main_button_mouse_exited() -> void:
+	$"MainCamera/Main Button".scale -= Vector2(0.2, 0.2)
+
+
+func _on_main_button_button_down() -> void:
+	$"MainCamera/Main Button".scale -= Vector2(0.2, 0.2)
+
+
+func _on_main_button_button_up() -> void:
+	$"MainCamera/Main Button".scale += Vector2(0.2, 0.2)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2q2vnpilk0n6"]
 
-[ext_resource type="Script" path="res://Scenes/Non-game/warning_message.gd" id="1_1l338"]
+[ext_resource type="Script" uid="uid://dy0qtiviy7boa" path="res://Scenes/Non-game/warning_message.gd" id="1_1l338"]
 
 [node name="WarningMessage" type="Control"]
 layout_mode = 3
