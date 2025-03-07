@@ -17,3 +17,8 @@ func _on_continue_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_reset_pressed() -> void:
+	CoreInfo.deletesave()
+	$"../..".startgame()

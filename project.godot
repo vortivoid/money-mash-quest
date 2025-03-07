@@ -23,10 +23,15 @@ config/icon="res://Icons/Main/MoneyMouthEmoji.png"
 [autoload]
 
 CoreInfo="*res://Scenes/Core Info/core_info.gd"
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
 
 [global_group]
 

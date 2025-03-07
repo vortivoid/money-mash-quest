@@ -6,7 +6,10 @@ const defaultmousepower = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	CoreInfo.autosave_disabled = true
 	savecheck()
+	$DiscordRPCUpdateTimer.start()
+	$DiscordRPCUpdateTimer/DiscordRPC.updateRPC()
 
 func startgame():
 	#Sets camera and plays background animation
@@ -15,7 +18,7 @@ func startgame():
 	UpdateValues()
 	$AutoClickTimer.start()
 	$AutosaveTimer.start()
-
+	CoreInfo.autosave_disabled = false
 
 func _process(_delta):
 		pass
@@ -44,7 +47,7 @@ func savecheck():
 			else:
 				var errorLabel = $WarningMessageCam/WarningMessage.get_node("Text")
 				if Label:
-					errorLabel.text = ("WARNING!\n\nYour existing save file is from version " + oldVer + " but you are running version " + CoreInfo.gameVer + "\n\nMoney Mash Quest is still in alpha and issues are likely to arise between updates. It is reccomended that you close the game and delete the save.data file in the game directory (where the .exe file is)")
+					errorLabel.text = ("WARNING!\n\nYour existing save file is from version " + oldVer + " but you are running version " + CoreInfo.gameVer + "\n\nMoney Mash Quest is still in alpha and issues are likely to arise between updates. It is reccomended that you delete your old save.")
 				$WarningMessageCam.make_current()
 		else:
 			print("No save file detected!")
@@ -134,3 +137,8 @@ func _on_main_button_button_down() -> void:
 
 func _on_main_button_button_up() -> void:
 	$"MainCamera/Main Button".scale += Vector2(0.2, 0.2)
+
+
+func _on_discord_rpc_update_timer_timeout():
+	$DiscordRPCUpdateTimer/DiscordRPC.updateRPC()
+	$DiscordRPCUpdateTimer.start(5.0)

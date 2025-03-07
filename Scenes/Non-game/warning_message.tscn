@@ -43,9 +43,9 @@ anchor_top = 0.559
 anchor_right = 0.464
 anchor_bottom = 0.611
 offset_left = 11.86
-offset_top = 192.635
+offset_top = 208.635
 offset_right = 127.84
-offset_bottom = 218.415
+offset_bottom = 234.415
 theme_override_font_sizes/font_size = 21
 text = "Continue Anyway?"
 
@@ -56,12 +56,28 @@ anchor_left = 0.381
 anchor_top = 0.559
 anchor_right = 0.464
 anchor_bottom = 0.611
-offset_left = 21.86
-offset_top = 240.635
-offset_right = 120.244
-offset_bottom = 266.415
+offset_left = 10.86
+offset_top = 274.635
+offset_right = 127.84
+offset_bottom = 300.415
 theme_override_font_sizes/font_size = 21
 text = "Exit"
 
+[node name="Reset" type="Button" parent="Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.559
+anchor_right = 0.464
+anchor_bottom = 0.611
+offset_left = 10.86
+offset_top = 149.635
+offset_right = 128.84
+offset_bottom = 175.415
+theme_override_colors/font_color = Color(0.94902, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "Reset"
+
 [connection signal="pressed" from="Text/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Text/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Text/Reset" to="." method="_on_reset_pressed"]

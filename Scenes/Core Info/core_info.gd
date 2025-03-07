@@ -1,12 +1,15 @@
 ### This script stores all the info in the game that should be saved when saving the game, as well as storing values for other scripts to access ###
 extends Node
-var gameVer = "Alpha 1.6.4"
+var gameVer = "Alpha 1.7.0"
 const save_path = "user://save.data"
+
+var autosave_disabled = false
 
 ## Saved variables (Values are just defaults and are replaced by contents of save file on load) ##
 # Main
 var coins = 0
 var gems = 0
+var totalCoinsEver = 0
 
 # Coin Shop Items
 var mouseSteroidsOwned = 0
@@ -37,6 +40,7 @@ func save():
 		"gameVer": gameVer,
 		"coins": coins,
 		"gems": gems,
+		"totalCoinsEver": totalCoinsEver,
 		"items_owned": {
 			"mouseSteroidsOwned": mouseSteroidsOwned,
 			"autoClickersOwned": autoClickersOwned,
@@ -63,6 +67,7 @@ func loadsave():
 		# Main
 		coins = game_data.get("coins", 0)
 		gems = game_data.get("gems", 0)
+		totalCoinsEver = game_data.get("totalCoinsEver", 0)
 		
 		# Items Owned (stored in a nested dictionary)
 		var items_owned = game_data.get("items_owned", {})
@@ -72,3 +77,6 @@ func loadsave():
 		gunOwned = items_owned.get("gunOwned", false)
 		
 		savefile.close()
+	
+func deletesave():
+	DirAccess.remove_absolute(save_path)

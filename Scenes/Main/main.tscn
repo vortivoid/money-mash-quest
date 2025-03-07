@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4yj3ruae1o2a"]
+[gd_scene load_steps=13 format=3 uid="uid://c4yj3ruae1o2a"]
 
 [ext_resource type="Script" uid="uid://bnf5bpphmcvd" path="res://Scenes/Main/main.gd" id="1_8y1ww"]
 [ext_resource type="Script" uid="uid://bs5bww03eoy5k" path="res://Scenes/Main/MainCamera.gd" id="2_souws"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqesbvxny8xjt" path="res://Icons/Main/10.jpg" id="6_kvrof"]
 [ext_resource type="Texture2D" uid="uid://dj5npoy0uxnkv" path="res://Icons/Main/mmq-money-icon.png" id="7_hfg1r"]
 [ext_resource type="Texture2D" uid="uid://gssa8bf510pq" path="res://Icons/Main/ScreamEmoji.png" id="7_isqho"]
+[ext_resource type="Script" uid="uid://p42i0uyjr483" path="res://Scenes/Main/discord_rpc.gd" id="12_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://bwn4sx63iopgm" path="res://Scenes/Shop/shop.tscn" id="128_qdpqk"]
 [ext_resource type="PackedScene" uid="uid://b8eoa8usrok3e" path="res://Scenes/Casino/casino.tscn" id="130_2dwlq"]
 [ext_resource type="PackedScene" uid="uid://2q2vnpilk0n6" path="res://Scenes/Non-game/warning_message.tscn" id="131_7lvsh"]
@@ -315,7 +316,15 @@ text = "Things to do:
 autostart = true
 
 [node name="AutosaveTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 15.0
+autostart = true
+
+[node name="DiscordRPCUpdateTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="DiscordRPC" type="Node" parent="DiscordRPCUpdateTimer"]
+script = ExtResource("12_4e4y2")
 
 [connection signal="pressed" from="MainCamera/ScreamEmoji/FreeRobux" to="." method="_on_secret_button_pressed"]
 [connection signal="button_down" from="MainCamera/Main Button" to="." method="_on_main_button_button_down"]
@@ -328,3 +337,4 @@ wait_time = 30.0
 [connection signal="pressed" from="MainCamera/CasinoButton" to="." method="_on_casino_button_pressed"]
 [connection signal="timeout" from="AutoClickTimer" to="." method="_on_auto_click_timer_timeout"]
 [connection signal="timeout" from="AutosaveTimer" to="." method="_on_autosave_timeout"]
+[connection signal="timeout" from="DiscordRPCUpdateTimer" to="." method="_on_discord_rpc_update_timer_timeout"]
