@@ -1,5 +1,4 @@
-# money-mash-quest
-## A game about inflation (as in money)
+# Money Mash Quest: A game about inflation (as in money)
 
 Money Mash Quest is a TOTALLY SERIOUS and PROFESSIONAL clicker game in which you must obtail many moneys by clicking the moneys to make more moneys which give u moneys
 The game features a shop where you can buy performance enhancing drugs for your mouse cursor, or purchase sla- willing helpers in the form of auto clickers!
