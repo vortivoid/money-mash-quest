@@ -9,70 +9,69 @@ func _process(_delta):
 ## Shop Items ##
 # Auto-Clicker
 func _on_auto_clicker_upgrade_pressed():
-	if CoreInfo.gems >= CoreInfo.autoClickerUpgradePrice:
-		CoreInfo.gems -= CoreInfo.autoClickerUpgradePrice
-		CoreInfo.AutoClickerUpgradeOwned = true
+	if Globals.gems >= Globals.autoClickerUpgradePrice:
+		Globals.gems -= Globals.autoClickerUpgradePrice
+		Globals.AutoClickerUpgradeOwned = true
 	else:
 		pass # Put a text thingy here lol
 
 
 func _on_plane_pressed():
-	if CoreInfo.planeOwned == true:
+	if Globals.planeOwned == true:
 		print("You already own this item!")
 	else:
-		if CoreInfo.gems >= CoreInfo.planePrice:
-			CoreInfo.gems -= CoreInfo.planePrice
-			CoreInfo.planeOwned = true
+		if Globals.gems >= Globals.planePrice:
+			Globals.gems -= Globals.planePrice
+			Globals.planeOwned = true
 			UpdateShop()
 
 func _on_mouse_steroids_upgrade_button_pressed():
-	if CoreInfo.gems >= CoreInfo.mouseSteroidsUpgradePrice:
-		CoreInfo.gems -= CoreInfo.mouseSteroidsUpgradePrice
-		CoreInfo.MouseSteroidsUpgradeOwned = true
+	if Globals.gems >= Globals.mouseSteroidsUpgradePrice:
+		Globals.gems -= Globals.mouseSteroidsUpgradePrice
+		Globals.MouseSteroidsUpgradeOwned = true
 	else:
 		pass # Put a text thingy here too :3
 
 func _on_gun_pressed():
-	if CoreInfo.gunOwned == true:
+	if Globals.gunOwned == true:
 		print("You already own this item!")
 	else:
-		if CoreInfo.gems >= CoreInfo.gunPrice:
-			CoreInfo.gems -= CoreInfo.gunPrice
-			CoreInfo.gunOwned = true
+		if Globals.gems >= Globals.gunPrice:
+			Globals.gems -= Globals.gunPrice
+			Globals.gunOwned = true
 
 ## Other stuff
 func UpdateShop(): ### Updates all important variables in the shop such as labels displaying item costs ###
-	if CoreInfo.MouseSteroidsUpgradeOwned:
+	if Globals.MouseSteroidsUpgradeOwned:
 		$MouseSteroidsUpgradeButton.disabled = true
 		$MouseSteroidsUpgradeButton/GemIcon/ItemCost.text = "Owned!"
 	else:
 
-		$MouseSteroidsUpgradeButton/GemIcon/ItemCost.text = str(CoreInfo.mouseSteroidsUpgradePrice)
-	if CoreInfo.AutoClickerUpgradeOwned:
+		$MouseSteroidsUpgradeButton/GemIcon/ItemCost.text = str(Globals.mouseSteroidsUpgradePrice)
+	if Globals.AutoClickerUpgradeOwned:
 		$AutoClickerUpgrade.disabled = true
 		$AutoClickerUpgrade/GemIcon/ItemCost.text = "Owned!"
 	else:
-		$AutoClickerUpgrade/GemIcon/ItemCost.text = str(CoreInfo.autoClickerUpgradePrice)
+		$AutoClickerUpgrade/GemIcon/ItemCost.text = str(Globals.autoClickerUpgradePrice)
 
-	if CoreInfo.gunOwned:
+	if Globals.gunOwned:
 		$Gun.disabled = true
 		$Gun/GemIcon/ItemCost.text = "Owned!"
 	else:
-		$Gun/GemIcon/ItemCost.text = str(CoreInfo.gunPrice)
+		$Gun/GemIcon/ItemCost.text = str(Globals.gunPrice)
 
-	if CoreInfo.planeOwned:
+	if Globals.planeOwned:
 		$Plane.disabled = true
 		$Plane/GemIcon/ItemCost.text = "Owned!"
 	else:
-		$Plane/GemIcon/ItemCost.text = str(CoreInfo.planePrice)
+		$Plane/GemIcon/ItemCost.text = str(Globals.planePrice)
 		
-	$GemIcon/GemCount.text = str(CoreInfo.gems)
+	$GemIcon/GemCount.text = str(Globals.gems)
 
 
 
 func _on_coin_shop_button_pressed():
-	$"../../ShopCamera".make_current()
+	get_tree().change_scene_to_file("res://Scenes/Shop/shop.tscn")
 
 func _on_back_button_pressed():
-	get_tree().call_group("maincam", "switch")
-	$"../..".UpdateValues()
+	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")

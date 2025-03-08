@@ -1,0 +1,244 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4yj3ruae1o2a"]
+
+[ext_resource type="Script" uid="uid://bnf5bpphmcvd" path="res://Scenes/Office/office.gd" id="1_xvd0a"]
+[ext_resource type="Script" uid="uid://bs5bww03eoy5k" path="res://Scenes/Office/officeCamera.gd" id="2_unbm2"]
+[ext_resource type="Texture2D" uid="uid://cqesbvxny8xjt" path="res://Icons/Main/10.jpg" id="3_q58a0"]
+[ext_resource type="Texture2D" uid="uid://gssa8bf510pq" path="res://Icons/Main/ScreamEmoji.png" id="4_hoad8"]
+[ext_resource type="Texture2D" uid="uid://dj5npoy0uxnkv" path="res://Icons/Main/mmq-money-icon.png" id="5_dd2rk"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="6_boyou"]
+[ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="7_a2sxv"]
+
+[node name="Office" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1096.0
+offset_top = -336.0
+offset_right = -1096.0
+offset_bottom = -336.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xvd0a")
+
+[node name="MainCamera" type="Camera2D" parent="." groups=["cameras", "maincam"]]
+position = Vector2(577, 323)
+script = ExtResource("2_unbm2")
+metadata/_edit_lock_ = true
+
+[node name="LeaderboardTitle" type="Panel" parent="MainCamera"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 379.0
+offset_top = -287.0
+offset_right = 574.0
+offset_bottom = -224.0
+grow_horizontal = 2
+metadata/_edit_lock_ = true
+
+[node name="Text" type="Label" parent="MainCamera/LeaderboardTitle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -28.5
+offset_right = 93.5
+offset_bottom = 58.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 19
+text = "Totally Real
+Leaderboard:
+"
+metadata/_edit_lock_ = true
+
+[node name="FakeLeaderboard" type="Panel" parent="MainCamera"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 336.0
+offset_top = -218.0
+offset_right = 574.0
+offset_bottom = 273.0
+grow_horizontal = 2
+
+[node name="Names" type="Label" parent="MainCamera/FakeLeaderboard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -245.5
+offset_right = 112.0
+offset_bottom = 244.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 15
+text = "Dereton: Infinity
+
+Charlac: ☭
+
+Skye: 7777777
+
+DrAgOn Ninja 
+James XYZmoc
+The Meme Thief: 177013
+
+Finnfx: 42069
+
+Rev: 1714
+
+Kc: 211
+
+CharlieCringe: 123
+
+Longing String: 65
+
+Thon: Seventen
+
+Kneemund: -0
+
+Rug: -1
+
+Goaty: N/A"
+
+[node name="CoinDisplay" type="Panel" parent="MainCamera"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -198.0
+offset_top = -323.0
+offset_right = 203.0
+offset_bottom = -223.0
+grow_horizontal = 2
+
+[node name="CoinCounter" type="Label" parent="MainCamera/CoinDisplay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.5
+offset_top = 18.0
+offset_right = 574.5
+offset_bottom = 131.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "0 (broke ass💀)
+"
+clip_text = true
+metadata/_edit_lock_ = true
+
+[node name="10" type="Sprite2D" parent="MainCamera"]
+position = Vector2(-547, -168)
+scale = Vector2(0.0478516, 0.063889)
+texture = ExtResource("3_q58a0")
+
+[node name="NGI-Review" type="Label" parent="MainCamera/10"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 7.83624
+offset_top = -375.652
+offset_right = 3410.84
+offset_bottom = 459.348
+grow_horizontal = 2
+scale = Vector2(1.22484, 0.958391)
+theme_override_font_sizes/font_size = 305
+text = "\"Best game of all
+time ever!! 10/10\" - NGI"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScreamEmoji" type="Sprite2D" parent="MainCamera"]
+position = Vector2(-363, 300)
+scale = Vector2(0.0682566, 0.0401716)
+texture = ExtResource("4_hoad8")
+
+[node name="FreeRobux" type="Button" parent="MainCamera/ScreamEmoji"]
+offset_left = -3135.0
+offset_top = -573.0
+offset_right = 1845.0
+offset_bottom = 473.0
+scale = Vector2(0.56532, 1.07269)
+theme_override_font_sizes/font_size = 441
+text = "<Press for free robux!!>"
+flat = true
+
+[node name="Main Button" type="Button" parent="MainCamera"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -199.0
+offset_right = 196.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(194, 203)
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("5_dd2rk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainCamera/Main Button"]
+position = Vector2(-364, -249)
+stream = ExtResource("6_boyou")
+volume_db = 9.964
+
+[node name="SaveData" type="Button" parent="MainCamera"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -317.0
+offset_right = -381.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.209172, 0.63922, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Save Progress"
+
+[node name="WorldMapButton" type="Button" parent="MainCamera"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.5
+offset_top = -76.0
+offset_right = -438.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Spend Coins & Gems
+to buy items & upgrades"
+theme_override_font_sizes/font_size = 20
+text = "World Map
+"
+
+[node name="CoinIcon" type="Sprite2D" parent="MainCamera"]
+position = Vector2(-147, -274)
+scale = Vector2(0.0885714, 0.0885714)
+texture = ExtResource("7_a2sxv")
+
+[connection signal="pressed" from="MainCamera/ScreamEmoji/FreeRobux" to="." method="_on_secret_button_pressed"]
+[connection signal="button_down" from="MainCamera/Main Button" to="." method="_on_main_button_button_down"]
+[connection signal="button_up" from="MainCamera/Main Button" to="." method="_on_main_button_button_up"]
+[connection signal="mouse_entered" from="MainCamera/Main Button" to="." method="_on_main_button_mouse_entered"]
+[connection signal="mouse_exited" from="MainCamera/Main Button" to="." method="_on_main_button_mouse_exited"]
+[connection signal="pressed" from="MainCamera/Main Button" to="." method="_on_main_button_pressed"]
+[connection signal="pressed" from="MainCamera/SaveData" to="." method="_on_save_data_pressed"]
+[connection signal="pressed" from="MainCamera/WorldMapButton" to="." method="_on_shop_button_pressed"]

@@ -7,31 +7,30 @@ func _process(_delta):
 
 
 func _on_back_button_pressed():
-	get_tree().call_group("maincam", "switch")
-	$"../..".UpdateValues()
+	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
 
 func _on_gem_shop_button_pressed():
-	$"../../GemShopCam".make_current()
+	get_tree().change_scene_to_file("res://Scenes/Shop/gem_shop.tscn")
 
 #Mouse Steroids
 func _on_mouse_steroids_pressed():
-	if CoreInfo.coins >= CoreInfo.mouseSteroidsPrice: #Checks if you have enough coins to purchase the mouse steroids
-		CoreInfo.coins -= CoreInfo.mouseSteroidsPrice #Subtracts your money to match whatever the price was
+	if CoreInfo.money >= CoreInfo.mouseSteroidsPrice:
+		CoreInfo.money -= CoreInfo.mouseSteroidsPrice
 		CoreInfo.mouseSteroidsOwned += 1
 		
 func _on_buy_max_mousesteroids_pressed():
-	while CoreInfo.coins >= CoreInfo.mouseSteroidsPrice:
+	while CoreInfo.money >= CoreInfo.mouseSteroidsPrice:
 		_on_mouse_steroids_pressed()
 
 
 #Auto-Clicker
 func _on_auto_clicker_pressed():
-	if CoreInfo.coins >= CoreInfo.autoClickersPrice:
-		CoreInfo.coins -= CoreInfo.autoClickersPrice
+	if CoreInfo.money >= CoreInfo.autoClickersPrice:
+		CoreInfo.money -= CoreInfo.autoClickersPrice
 		CoreInfo.autoClickersOwned += 1
 
 func _on_buy_max_autoclicker_pressed():
-	while CoreInfo.coins >= CoreInfo.autoClickersPrice:
+	while CoreInfo.money >= CoreInfo.autoClickersPrice:
 		_on_auto_clicker_pressed()
 
 
@@ -42,7 +41,7 @@ func UpdateShop():
 	CoreInfo.autoClickersPrice = 25 * (CoreInfo.autoClickersOwned + 1)
 	
 	#Coin Display
-	$CoinIcon/CoinCount.text = str(CoreInfo.coins)
+	$CoinIcon/CoinCount.text = str(CoreInfo.money)
 	
 	#Owned Number Labels
 	$MouseSteroids/OwnedNumLabel.text = str("Have: " + str(CoreInfo.mouseSteroidsOwned))

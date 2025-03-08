@@ -1,0 +1,61 @@
+extends Control
+const defaultmousepower = 1
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	#Sets camera and plays background animation
+	$MainCamera.make_current()
+	$MainCamera/Background/MoneyFallingLoop.play("background")
+	CoreInfo.loadsave()
+	UpdateValues()
+
+	#Starts autoclicker loop
+	while true:
+		CoreInfo.coins += (CoreInfo.autoClickersOwned * CoreInfo.mouseSteroidsOwned + 1)
+		UpdateValues()
+
+func _process(_delta):
+	pass
+
+#Function that runs when the main button is clicked
+func _on_main_button_pressed():
+	doclick()
+
+func doclick():
+	#Increases coin count based on how many mouse steroids are owned
+	if CoreInfo.mouseSteroidsOwned == 0:
+		CoreInfo.coins += defaultmousepower
+	else:
+		CoreInfo.coins += (CoreInfo.mouseSteroidsOwned + 1)
+		print(CoreInfo.coins)
+	UpdateValues()
+	
+	#Plays audio cue
+	$MainCamera/"Main Button/AudioStreamPlayer2D".play()
+
+
+
+#Funny epic funny prank haha funny button clicked (defo not a rickroll)
+func _on_secret_button_pressed():
+	OS.shell_open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+
+
+#Save button clicked
+func _on_save_data_pressed():
+	CoreInfo.save()
+
+
+
+func UpdateValues():
+	$MainCamera/CoinDisplay/CoinCounter.text = str(CoreInfo.coins)
+	if CoreInfo.coins == 0:
+		$MainCamera/CoinDisplay/CoinCounter.text = "0 (broke ass 💀)"
+
+
+
+#Shop button clicked
+func _on_shop_button_pressed():
+	$ShopCamera.make_current()
+	$ShopCamera/Shop.UpdateShopLabels()

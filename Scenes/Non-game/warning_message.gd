@@ -3,7 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var errorLabel = $Text
+	if Label:
+		errorLabel.text = ("WARNING!\n\nYour existing save file is from version " + CoreInfo.oldSaveVersion + " but you are running version " + CoreInfo.gameVer + "\n\nMoney Mash Quest is still in alpha and issues are likely to arise between updates. It is reccomended that you delete your old save.")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

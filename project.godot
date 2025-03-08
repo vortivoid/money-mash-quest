@@ -11,19 +11,20 @@ config_version=5
 [application]
 
 config/name="Money Mash Quest"
-config/description="The game to game all games"
+config/description="A game about inflation (as in money)"
 config/tags=PackedStringArray("2d", "clicker", "joke")
-run/main_scene="res://Scenes/Main/main.tscn"
+run/main_scene="uid://c1triiucubuj6"
 config/features=PackedStringArray("4.4", "Mobile")
-boot_splash/fullsize=false
+boot_splash/bg_color=Color(0, 0.175317, 0.0680296, 1)
 boot_splash/use_filter=false
-boot_splash/image="res://Icons/Main/MoneyMouthEmoji.png"
-config/icon="res://Icons/Main/MoneyMouthEmoji.png"
+boot_splash/image="uid://dj5npoy0uxnkv"
+config/icon="uid://dj5npoy0uxnkv"
 
 [autoload]
 
-CoreInfo="*res://Scenes/Core Info/core_info.gd"
+Globals="*res://Scenes/Core Info/globals.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+GameController="res://Scenes/game_controller.gd"
 
 [display]
 
