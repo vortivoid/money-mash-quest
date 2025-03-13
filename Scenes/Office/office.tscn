@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4yj3ruae1o2a"]
+[gd_scene load_steps=9 format=3 uid="uid://c4yj3ruae1o2a"]
 
 [ext_resource type="Script" uid="uid://bnf5bpphmcvd" path="res://Scenes/Office/office.gd" id="1_xvd0a"]
 [ext_resource type="Script" uid="uid://bs5bww03eoy5k" path="res://Scenes/Office/officeCamera.gd" id="2_unbm2"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dj5npoy0uxnkv" path="res://Icons/Main/mmq-money-icon.png" id="5_dd2rk"]
 [ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="6_boyou"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="7_a2sxv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14mo1"]
 
 [node name="Office" type="Control"]
 layout_mode = 3
@@ -185,6 +187,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(194, 203)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_14mo1")
 icon = ExtResource("5_dd2rk")
 flat = true
 icon_alignment = 1

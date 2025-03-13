@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://be08yt3jekosx"]
+[gd_scene load_steps=7 format=3 uid="uid://be08yt3jekosx"]
 
 [ext_resource type="Texture2D" uid="uid://cvxhajk7g5b83" path="res://Backgrounds/mmq-map.png" id="1_iv8dp"]
 [ext_resource type="Script" uid="uid://dpk65r2n3167f" path="res://Scenes/WorldMap/world_map.gd" id="1_qx6hv"]
 [ext_resource type="Texture2D" uid="uid://tj4mb1px1ol2" path="res://Icons/WorldMap/mmq-office.png" id="4_qvxal"]
 [ext_resource type="AudioStream" uid="uid://cd4u7nn0sl1a" path="res://Audio/BGM/WorldMapTheme.wav" id="5_b0fsr"]
 [ext_resource type="Texture2D" uid="uid://oclgs4fnea55" path="res://Icons/WorldMap/mmq-shop.png" id="6_eteny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0fsr"]
 
 [node name="WorldMap" type="Control"]
 layout_mode = 3
@@ -34,7 +36,10 @@ offset_bottom = -661.813
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(260, 285)
+tooltip_text = "Office:
+This is where u mash money"
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b0fsr")
 icon = ExtResource("4_qvxal")
 flat = true
 icon_alignment = 1
@@ -53,7 +58,10 @@ offset_bottom = -661.907
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(211.667, 221.667)
+tooltip_text = "Shop:
+This is where u buy stuffs"
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b0fsr")
 icon = ExtResource("6_eteny")
 flat = true
 icon_alignment = 1
