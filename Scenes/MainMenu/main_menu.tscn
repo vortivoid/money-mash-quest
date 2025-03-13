@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=3 uid="uid://n5b4ermrjhdv"]
+
+[ext_resource type="Script" uid="uid://dghds08j2rsx" path="res://Scenes/MainMenu/main_menu.gd" id="1_qgdf6"]
+[ext_resource type="Texture2D" uid="uid://co35ejv7632km" path="res://MMQ Title.png" id="1_uqdog"]
+[ext_resource type="Texture2D" uid="uid://cyibc1gky2pwf" path="res://mmqtitlebg.png" id="2_v763k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v763k"]
+bg_color = Color(0.225629, 0.717315, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.903732, 0.813656, 0.0742178, 1)
+
+[sub_resource type="Gradient" id="Gradient_qgdf6"]
+offsets = PackedFloat32Array(0.993506, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0qgbs"]
+gradient = SubResource("Gradient_qgdf6")
+fill_from = Vector2(1, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qgdf6")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416
+anchor_top = 0.5
+anchor_right = 0.602
+anchor_bottom = 0.636
+offset_left = -0.231995
+offset_top = -3.0
+offset_right = 0.495911
+offset_bottom = -0.128021
+pivot_offset = Vector2(103, 46)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_v763k")
+text = "Start Game"
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+metadata/_edit_lock_ = true
+
+[node name="MmqTitle" type="Sprite2D" parent="."]
+position = Vector2(598, 179)
+scale = Vector2(0.325926, 0.325926)
+texture = ExtResource("1_uqdog")
+metadata/_edit_lock_ = true
+
+[node name="DeleteSaveButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.898
+anchor_top = 0.929
+anchor_right = 0.998
+anchor_bottom = 0.997
+offset_left = 0.503906
+offset_top = 0.00799561
+offset_right = 0.303955
+offset_bottom = -0.0560303
+pivot_offset = Vector2(61, 25)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Delete Save"
+metadata/_edit_lock_ = true
+
+[node name="Mmqtitlebg" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(576.778, 323.5)
+scale = Vector2(0.613889, 0.613889)
+texture = ExtResource("2_v763k")
+metadata/_edit_lock_ = true
+
+[node name="DeleteSaveConfirm" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_left = 0.043
+anchor_top = 0.04
+anchor_right = 0.965
+anchor_bottom = 0.949
+offset_left = 0.463997
+offset_top = 0.079998
+offset_right = 0.319946
+offset_bottom = 0.0479736
+pivot_offset = Vector2(531, 305)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="DeleteSaveConfirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.033
+anchor_top = -0.024
+anchor_right = 1.029
+anchor_bottom = 1.027
+offset_left = 0.0460014
+offset_top = 0.136
+offset_right = 0.201904
+offset_bottom = 0.0969849
+pivot_offset = Vector2(559, 313)
+texture = SubResource("GradientTexture2D_0qgbs")
+metadata/_edit_lock_ = true
+
+[node name="Confirm" type="Button" parent="DeleteSaveConfirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.274
+anchor_top = 0.61
+anchor_right = 0.399
+anchor_bottom = 0.698
+offset_left = 0.0119934
+offset_top = -0.290009
+offset_right = 0.261993
+offset_bottom = -0.122009
+pivot_offset = Vector2(62, 23)
+text = "Delete"
+metadata/_edit_lock_ = true
+
+[node name="Cancel" type="Button" parent="DeleteSaveConfirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.585
+anchor_top = 0.611
+anchor_right = 0.71
+anchor_bottom = 0.699
+offset_left = -0.27002
+offset_top = 0.121002
+offset_right = -0.0200195
+offset_bottom = 0.288971
+pivot_offset = Vector2(62, 23)
+text = "Cancel"
+metadata/_edit_lock_ = true
+
+[node name="WarningText" type="Label" parent="DeleteSaveConfirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202
+anchor_top = 0.292
+anchor_right = 0.802
+anchor_bottom = 0.419
+offset_left = -0.524002
+offset_top = 0.0119781
+offset_right = 0.27594
+offset_bottom = 0.208984
+pivot_offset = Vector2(322, 41)
+text = "WARNING:
+This will delete your save data forever (unless you manually back it up first i guess)
+Are you sure you want to delete your save data?"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="DeleteSaveButton" to="." method="_on_delete_save_button_pressed"]
+[connection signal="pressed" from="DeleteSaveConfirm/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="DeleteSaveConfirm/Cancel" to="." method="_on_cancel_pressed"]

@@ -34,12 +34,6 @@ var gunPrice = 100
 # Old Save Info
 var oldSaveVersion = ""
 
-func _ready() -> void:
-	autosave_disabled = true
-	print("Disabled autosave during save check!")
-	print("Running Save Check...")
-	savecheck()
-
 func save():
 	var savefile = FileAccess.open(save_path, FileAccess.WRITE)
 	
@@ -90,6 +84,7 @@ func deletesave():
 	DirAccess.remove_absolute(save_path)
 
 func savecheck():
+	print("Checking for existing save file...")
 	if FileAccess.file_exists(save_path):
 		print("File found!")
 		var savefile = FileAccess.open(save_path, FileAccess.READ)
@@ -118,9 +113,9 @@ func savecheck():
 				oldSaveVersion = oldVer
 				get_tree().change_scene_to_file("res://Scenes/Non-game/warning_message.tscn")
 				print("Loaded warning message scene.")
-		else:
-			print("No save file detected!")
-			startgame()
+	else:
+		print("No save file detected!")
+		startgame()
 
 func startgame():
 	print("Starting game with detected save data")
