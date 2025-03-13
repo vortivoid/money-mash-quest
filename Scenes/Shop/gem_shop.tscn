@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqeqmesqlhd1d"]
+[gd_scene load_steps=9 format=3 uid="uid://bqeqmesqlhd1d"]
 
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_0edds"]
 [ext_resource type="Script" uid="uid://e1cv5pryduii" path="res://Scenes/Shop/gem_shop.gd" id="1_jygbo"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bemuu166lbeye" path="res://Icons/Shop/AutoClickerUpgrade.png" id="5_ik7nt"]
 [ext_resource type="Texture2D" uid="uid://b7ddi1muicnmx" path="res://Icons/Shop/LiteralGunIcon.png" id="5_t8c0s"]
 [ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="6_bx7a7"]
+[ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="8_4nlap"]
 
 [node name="GemShop" type="Control"]
 layout_mode = 3
@@ -282,9 +283,14 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 37
 text = "SHOP UNDER DEVELOPMENT!"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4nlap")
+autoplay = true
+
 [connection signal="pressed" from="MouseSteroidsUpgradeButton" to="." method="_on_mouse_steroids_upgrade_button_pressed"]
 [connection signal="pressed" from="AutoClickerUpgrade" to="." method="_on_auto_clicker_upgrade_pressed"]
 [connection signal="pressed" from="Gun" to="." method="_on_gun_pressed"]
 [connection signal="pressed" from="Plane" to="." method="_on_plane_pressed"]
 [connection signal="pressed" from="Layout/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Layout/CoinShopButton" to="." method="_on_coin_shop_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
