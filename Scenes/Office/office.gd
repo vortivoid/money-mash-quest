@@ -92,3 +92,7 @@ func _on_autosave_timer_timeout() -> void:
 	Globals.save()
 	print("Autosave complete!")
 	$AutosaveTimer.start()
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()

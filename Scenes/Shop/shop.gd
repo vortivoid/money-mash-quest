@@ -50,3 +50,7 @@ func UpdateShop():
 	#Price Labels
 	$MouseSteroids/CoinIcon/ItemCost.text = str(Globals.mouseSteroidsPrice)
 	$AutoClicker/CoinIcon/ItemCost.text = str(Globals.autoClickersPrice)
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()

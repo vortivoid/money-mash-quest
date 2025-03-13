@@ -75,3 +75,7 @@ func _on_coin_shop_button_pressed():
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()

@@ -19,3 +19,7 @@ func _on_confirm_pressed() -> void:
 
 func _on_cancel_pressed() -> void:
 	$DeleteSaveConfirm.visible = false
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()

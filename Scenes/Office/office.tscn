@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4yj3ruae1o2a"]
+[gd_scene load_steps=10 format=3 uid="uid://c4yj3ruae1o2a"]
 
 [ext_resource type="Script" uid="uid://bnf5bpphmcvd" path="res://Scenes/Office/office.gd" id="1_xvd0a"]
 [ext_resource type="Script" uid="uid://bs5bww03eoy5k" path="res://Scenes/Office/officeCamera.gd" id="2_unbm2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dj5npoy0uxnkv" path="res://Icons/Main/mmq-money-icon.png" id="5_dd2rk"]
 [ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="6_boyou"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="7_a2sxv"]
+[ext_resource type="AudioStream" uid="uid://df4l45j65cc3p" path="res://Audio/BGM/679167__yipyep__chiptune-type-beat-no-bass.mp3" id="8_xvd0a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14mo1"]
 
@@ -244,6 +245,11 @@ autostart = true
 wait_time = 15.0
 autostart = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xvd0a")
+volume_db = -6.121
+autoplay = true
+
 [connection signal="pressed" from="MainCamera/ScreamEmoji/FreeRobux" to="." method="_on_secret_button_pressed"]
 [connection signal="button_down" from="MainCamera/Main Button" to="." method="_on_main_button_button_down"]
 [connection signal="button_up" from="MainCamera/Main Button" to="." method="_on_main_button_button_up"]
@@ -254,3 +260,4 @@ autostart = true
 [connection signal="pressed" from="MainCamera/WorldMapButton" to="." method="_on_shop_button_pressed"]
 [connection signal="timeout" from="AutoClickTimer" to="." method="_on_auto_click_timer_timeout"]
 [connection signal="timeout" from="AutosaveTimer" to="." method="_on_autosave_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

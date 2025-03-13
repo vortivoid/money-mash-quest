@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8eoa8usrok3e"]
+[gd_scene load_steps=12 format=3 uid="uid://b8eoa8usrok3e"]
 
 [ext_resource type="Script" uid="uid://cty3ujr543jqh" path="res://Scenes/Casino/casino.gd" id="1_4sgjb"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_ijs1l"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b0fenkrokgspi" path="res://Scenes/Casino/standard_gamble.gd" id="6_a1vgo"]
 [ext_resource type="Script" uid="uid://crrnc6fs7g5jv" path="res://Scenes/Casino/cooler_gamble.gd" id="8_n2giw"]
 [ext_resource type="Texture2D" uid="uid://bastswx54nqs8" path="res://Backgrounds/CasinoBackground.png" id="9_2codh"]
+[ext_resource type="AudioStream" uid="uid://bjslqntxvpbdp" path="res://Audio/BGM/744187__neko_4444__selection-menu.wav" id="10_2codh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu03g"]
 bg_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -244,7 +245,12 @@ scale = Vector2(0.599074, 0.599074)
 texture = ExtResource("9_2codh")
 metadata/_edit_lock_ = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_2codh")
+autoplay = true
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="BabyGamble" to="BabyGamble" method="_on_pressed"]
 [connection signal="pressed" from="StandardGamble" to="StandardGamble" method="_on_pressed"]
 [connection signal="pressed" from="CoolerGamble" to="CoolerGamble" method="_on_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
