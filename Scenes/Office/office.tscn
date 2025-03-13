@@ -237,6 +237,13 @@ position = Vector2(-147, -274)
 scale = Vector2(0.0885714, 0.0885714)
 texture = ExtResource("7_a2sxv")
 
+[node name="AutoClickTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="AutosaveTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
 [connection signal="pressed" from="MainCamera/ScreamEmoji/FreeRobux" to="." method="_on_secret_button_pressed"]
 [connection signal="button_down" from="MainCamera/Main Button" to="." method="_on_main_button_button_down"]
 [connection signal="button_up" from="MainCamera/Main Button" to="." method="_on_main_button_button_up"]
@@ -245,3 +252,5 @@ texture = ExtResource("7_a2sxv")
 [connection signal="pressed" from="MainCamera/Main Button" to="." method="_on_main_button_pressed"]
 [connection signal="pressed" from="MainCamera/SaveData" to="." method="_on_save_data_pressed"]
 [connection signal="pressed" from="MainCamera/WorldMapButton" to="." method="_on_shop_button_pressed"]
+[connection signal="timeout" from="AutoClickTimer" to="." method="_on_auto_click_timer_timeout"]
+[connection signal="timeout" from="AutosaveTimer" to="." method="_on_autosave_timer_timeout"]

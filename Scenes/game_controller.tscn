@@ -6,13 +6,6 @@
 [node name="GameController" type="Node"]
 script = ExtResource("1_nqxm2")
 
-[node name="AutoClickTimer" type="Timer" parent="."]
-autostart = true
-
-[node name="AutosaveTimer" type="Timer" parent="."]
-wait_time = 15.0
-autostart = true
-
 [node name="DiscordRPCUpdateTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
