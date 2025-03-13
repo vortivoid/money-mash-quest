@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://be08yt3jekosx"]
+
+[ext_resource type="Texture2D" uid="uid://cvxhajk7g5b83" path="res://Backgrounds/mmq-map.png" id="1_iv8dp"]
+[ext_resource type="Script" uid="uid://dpk65r2n3167f" path="res://Scenes/WorldMap/world_map.gd" id="1_qx6hv"]
+[ext_resource type="Texture2D" uid="uid://tj4mb1px1ol2" path="res://Icons/WorldMap/mmq-office.png" id="4_qvxal"]
+[ext_resource type="AudioStream" uid="uid://cd4u7nn0sl1a" path="res://Audio/BGM/WorldMapTheme.wav" id="5_b0fsr"]
+[ext_resource type="Texture2D" uid="uid://oclgs4fnea55" path="res://Icons/WorldMap/mmq-shop.png" id="6_eteny"]
+[ext_resource type="Texture2D" uid="uid://elwmy25i86ld" path="res://Icons/WorldMap/mmq-casino.png" id="6_iv8dp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0fsr"]
+
+[node name="WorldMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qx6hv")
+
+[node name="Mmq-map" type="Sprite2D" parent="."]
+position = Vector2(759, 398)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_iv8dp")
+offset = Vector2(-303.519, -121.667)
+
+[node name="OfficeButton" type="Button" parent="Mmq-map"]
+anchors_preset = -1
+anchor_left = 0.528
+anchor_top = 0.434
+anchor_right = 0.805
+anchor_bottom = 0.931
+offset_left = -1263.76
+offset_top = -662.053
+offset_right = -1262.6
+offset_bottom = -661.813
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(260, 285)
+tooltip_text = "Office:
+This is where u mash money"
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b0fsr")
+icon = ExtResource("4_qvxal")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="ShopButton" type="Button" parent="Mmq-map"]
+anchors_preset = -1
+anchor_left = 0.184
+anchor_top = 0.472
+anchor_right = 0.397
+anchor_bottom = 0.853
+offset_left = -1263.28
+offset_top = -661.427
+offset_right = -1264.24
+offset_bottom = -661.907
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(211.667, 221.667)
+tooltip_text = "Shop:
+This is where u buy stuffs"
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b0fsr")
+icon = ExtResource("6_eteny")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Mmq-map"]
+position = Vector2(7, 20)
+stream = ExtResource("5_b0fsr")
+volume_db = 5.622
+autoplay = true
+
+[node name="CasinoButton" type="Button" parent="Mmq-map"]
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = -0.074
+anchor_right = 0.677
+anchor_bottom = 0.4
+offset_left = -1262.68
+offset_top = -661.747
+offset_right = -1262.84
+offset_bottom = -661.667
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(286.667, 266.667)
+tooltip_text = "Shop:
+This is where u buy stuffs"
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b0fsr")
+icon = ExtResource("6_iv8dp")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="button_down" from="Mmq-map/OfficeButton" to="." method="_on_office_button_button_down"]
+[connection signal="mouse_entered" from="Mmq-map/OfficeButton" to="." method="_on_office_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mmq-map/OfficeButton" to="." method="_on_office_button_mouse_exited"]
+[connection signal="pressed" from="Mmq-map/OfficeButton" to="." method="_on_office_button_pressed"]
+[connection signal="button_down" from="Mmq-map/ShopButton" to="." method="_on_shop_button_button_down"]
+[connection signal="mouse_entered" from="Mmq-map/ShopButton" to="." method="_on_shop_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mmq-map/ShopButton" to="." method="_on_shop_button_mouse_exited"]
+[connection signal="pressed" from="Mmq-map/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="button_down" from="Mmq-map/CasinoButton" to="." method="_on_casino_button_button_down"]
+[connection signal="mouse_entered" from="Mmq-map/CasinoButton" to="." method="_on_casino_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mmq-map/CasinoButton" to="." method="_on_casino_button_mouse_exited"]
+[connection signal="pressed" from="Mmq-map/CasinoButton" to="." method="_on_casino_button_pressed"]

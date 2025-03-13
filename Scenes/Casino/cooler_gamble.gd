@@ -4,47 +4,47 @@ const COST = 100000
 
 func _on_pressed():
 	$"../ResultText".visible = true
-	if CoreInfo.coins >= COST:
+	if Globals.money >= COST:
 		var gambleNum = randi_range(1,10) # Roll a number
 		
 		# Coin Prize
 		if gambleNum == 1: 
-			CoreInfo.coins += 100000
-			$"../ResultText".text = ("You won 100,000 coins!")
+			Globals.money += 100000
+			$"../ResultText".text = ("You won 100,000 money!")
 			print("Coin prize!")
 			
 		# Mouse Steroids Prize
 		elif gambleNum == 2: 
 			var randMouseSteroidsNum = randi_range(100,200)
-			CoreInfo.mouseSteroidsOwned += randMouseSteroidsNum
+			Globals.mouseSteroidsOwned += randMouseSteroidsNum
 			$"../ResultText".text = ("You won " + str(randMouseSteroidsNum) + " Mouse Steroids!")
-			CoreInfo.coins -= COST
+			Globals.money -= COST
 			print("Mouse Steroids Prize!")
 			
 		# Gain somewhere between 1-10 mouse steroids
 		elif gambleNum == 3: 
 			var randAutoClickerNum = randi_range(100,200)
-			CoreInfo.autoClickersOwned += randAutoClickerNum
+			Globals.autoClickersOwned += randAutoClickerNum
 			$"../ResultText".text = ("You won " + str(randAutoClickerNum) + " Auto Clickers!")
-			CoreInfo.coins -= COST
+			Globals.money -= COST
 			print("Auto Clicker Prize!")
 			
 		elif gambleNum == 4:
 			var randGemNum = randi_range(30,50)
-			CoreInfo.gems += randGemNum
+			Globals.gems += randGemNum
 			$"../ResultText".text = ("You won " + str(randGemNum) + " Gems!")
-			CoreInfo.coins -= COST
+			Globals.money -= COST
 			print("Gem Prize!")
 		
 		
 		# Take gamble cost & do nothing
 		else:
-			CoreInfo.coins -= COST
+			Globals.money -= COST
 			$"../ResultText".text = ("Nothing happened!")
 			print("No Prize...")
 		
-	# Not enough coins
+	# Not enough money
 	else:
-		$"../ResultText".text = ("You do not have enough coins to gamble!")
-		print("Not enough coins!")
-	CoreInfo.save() # Save game to prevent save-scumming
+		$"../ResultText".text = ("You do not have enough money to gamble!")
+		print("Not enough money!")
+	Globals.save() # Save game to prevent save-scumming
