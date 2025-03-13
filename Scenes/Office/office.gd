@@ -11,13 +11,13 @@ func _process(_delta: float) -> void:
 
 func doclick():
 	#Increases coin count based on how many mouse steroids are owned
-	if CoreInfo.mouseSteroidsOwned == 0:
-		CoreInfo.money += 1
+	if Globals.mouseSteroidsOwned == 0:
+		Globals.money += 1
 	else:
-		if CoreInfo.MouseSteroidsUpgradeOwned:
-			CoreInfo.money += ((CoreInfo.MouseSteroidsOwned + 1) * 2)
+		if Globals.MouseSteroidsUpgradeOwned:
+			Globals.money += ((Globals.MouseSteroidsOwned + 1) * 2)
 		else:
-			CoreInfo.money += (CoreInfo.mouseSteroidsOwned + 1)
+			Globals.money += (Globals.mouseSteroidsOwned + 1)
 	
 	#Plays audio cue
 	$MainCamera/"Main Button/AudioStreamPlayer2D".play()
@@ -35,12 +35,12 @@ func _on_secret_button_pressed():
 
 #Save button clicked
 func _on_save_data_pressed():
-	CoreInfo.save()
+	Globals.save()
 
 
 func UpdateValues():
-	$MainCamera/CoinDisplay/CoinCounter.text = str(CoreInfo.money)
-	if int(CoreInfo.money) == 0:
+	$MainCamera/CoinDisplay/CoinCounter.text = str(Globals.money)
+	if int(Globals.money) == 0:
 		$MainCamera/CoinDisplay/CoinCounter.text = "0 (broke ass 💀)"
 
 #Shop button clicked
