@@ -13,11 +13,11 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.903732, 0.813656, 0.0742178, 1)
 
-[sub_resource type="Gradient" id="Gradient_qgdf6"]
+[sub_resource type="Gradient" id="Gradient_0qgbs"]
 offsets = PackedFloat32Array(0.993506, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0qgbs"]
-gradient = SubResource("Gradient_qgdf6")
+gradient = SubResource("Gradient_0qgbs")
 fill_from = Vector2(1, 0)
 
 [node name="MainMenu" type="Control"]

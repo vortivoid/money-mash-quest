@@ -17,5 +17,12 @@ func _on_exit_pressed() -> void:
 
 
 func _on_reset_pressed() -> void:
+	$DeleteSaveConfirm.visible = true
+
+func _on_confirm_pressed() -> void:
 	Globals.deletesave()
+	$DeleteSaveConfirm.visible = false
 	Globals.startgame()
+
+func _on_cancel_pressed() -> void:
+	$DeleteSaveConfirm.visible = false
