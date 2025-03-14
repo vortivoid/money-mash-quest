@@ -215,6 +215,25 @@ theme_override_colors/font_color = Color(0.209172, 0.63922, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Save Progress"
 
+[node name="Label" type="Label" parent="MainCamera/SaveData"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.048
+anchor_top = 0.093
+anchor_right = 1.466
+anchor_bottom = 0.907
+offset_left = -0.0720215
+offset_top = 0.000999928
+offset_right = -0.0740051
+offset_bottom = -0.00100327
+pivot_offset = Vector2(34, 18)
+theme_override_font_sizes/font_size = 25
+text = "Saved!"
+
+[node name="savetexttime" type="Timer" parent="MainCamera/SaveData"]
+wait_time = 2.0
+
 [node name="WorldMapButton" type="Button" parent="MainCamera"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -255,6 +274,7 @@ autoplay = true
 [connection signal="mouse_exited" from="MainCamera/Main Button" to="." method="_on_main_button_mouse_exited"]
 [connection signal="pressed" from="MainCamera/Main Button" to="." method="_on_main_button_pressed"]
 [connection signal="pressed" from="MainCamera/SaveData" to="." method="_on_save_data_pressed"]
+[connection signal="timeout" from="MainCamera/SaveData/savetexttime" to="." method="_on_savetexttime_timeout"]
 [connection signal="pressed" from="MainCamera/WorldMapButton" to="." method="_on_shop_button_pressed"]
 [connection signal="timeout" from="AutoClickTimer" to="." method="_on_auto_click_timer_timeout"]
 [connection signal="timeout" from="AutosaveTimer" to="." method="_on_autosave_timer_timeout"]

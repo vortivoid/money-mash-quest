@@ -36,6 +36,9 @@ func _on_secret_button_pressed():
 #Save button clicked
 func _on_save_data_pressed():
 	Globals.save()
+	$MainCamera/SaveData/Label.visible = true
+	$MainCamera/SaveData/savetexttime.start()
+
 
 
 func UpdateValues():
@@ -90,9 +93,15 @@ func doautoclick():
 
 func _on_autosave_timer_timeout() -> void:
 	Globals.save()
+	$MainCamera/SaveData/Label.visible = true
+	$MainCamera/SaveData/savetexttime.start()
 	print("Autosave complete!")
 	$AutosaveTimer.start()
 
 
 func _on_audio_stream_player_finished() -> void:
 	$AudioStreamPlayer.play()
+
+
+func _on_savetexttime_timeout() -> void:
+	$MainCamera/SaveData/Label.visible = false
