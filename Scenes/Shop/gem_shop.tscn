@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqeqmesqlhd1d"]
+[gd_scene load_steps=11 format=3 uid="uid://bqeqmesqlhd1d"]
 
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_0edds"]
 [ext_resource type="Script" uid="uid://e1cv5pryduii" path="res://Scenes/Shop/gem_shop.gd" id="1_jygbo"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://b7ddi1muicnmx" path="res://Icons/Shop/LiteralGunIcon.png" id="5_t8c0s"]
 [ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="6_bx7a7"]
 [ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="8_4nlap"]
+[ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="9_emegm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emegm"]
+bg_color = Color(0.912289, 0.912289, 0.912289, 1)
 
 [node name="GemShop" type="Control"]
 layout_mode = 3
@@ -25,6 +29,7 @@ offset_top = 50.0
 offset_right = 335.0
 offset_bottom = 210.0
 tooltip_text = "Doubles the effectiveness of Mouse Steroids"
+theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
 icon = ExtResource("4_k1jnj")
 icon_alignment = 1
 expand_icon = true
@@ -73,6 +78,7 @@ offset_top = 50.0
 offset_right = 660.0
 offset_bottom = 210.0
 tooltip_text = "Gives Auto Clickers the ability to make use of Mouse Steroids"
+theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
 icon = ExtResource("5_ik7nt")
 icon_alignment = 1
 expand_icon = true
@@ -119,6 +125,7 @@ offset_top = 50.0
 offset_right = 1010.0
 offset_bottom = 210.0
 tooltip_text = "[Use Currently Unimplemented]"
+theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
 icon = ExtResource("5_t8c0s")
 icon_alignment = 1
 expand_icon = true
@@ -167,6 +174,7 @@ offset_top = 323.0
 offset_right = 335.0
 offset_bottom = 483.0
 tooltip_text = "[Use Currently Unimplemented]"
+theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
 icon = ExtResource("4_c15rh")
 icon_alignment = 1
 expand_icon = true
@@ -286,6 +294,12 @@ text = "SHOP UNDER DEVELOPMENT!"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_4nlap")
 autoplay = true
+
+[node name="Mmq-store-background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(573.111, 325)
+scale = Vector2(0.603704, 0.603704)
+texture = ExtResource("9_emegm")
 
 [connection signal="pressed" from="MouseSteroidsUpgradeButton" to="." method="_on_mouse_steroids_upgrade_button_pressed"]
 [connection signal="pressed" from="AutoClickerUpgrade" to="." method="_on_auto_clicker_upgrade_pressed"]
