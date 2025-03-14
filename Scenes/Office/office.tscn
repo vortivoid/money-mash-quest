@@ -227,8 +227,6 @@ offset_right = -438.5
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "Spend Coins & Gems
-to buy items & upgrades"
 theme_override_font_sizes/font_size = 20
 text = "World Map
 "

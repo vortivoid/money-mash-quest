@@ -87,8 +87,8 @@ offset_bottom = -661.667
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(286.667, 266.667)
-tooltip_text = "Shop:
-This is where u buy stuffs"
+tooltip_text = "Casino:
+This is where u lose all ur money"
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b0fsr")
 icon = ExtResource("6_iv8dp")
