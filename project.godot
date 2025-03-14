@@ -23,7 +23,6 @@ config/icon="uid://dj5npoy0uxnkv"
 [autoload]
 
 Globals="*res://Scenes/Core Info/globals.gd"
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [display]
 
@@ -31,7 +30,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 

@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://hq71nacofn20"]
+
+[ext_resource type="Script" uid="uid://c3wtknhtosi51" path="res://name_select.gd" id="1_b4sja"]
+[ext_resource type="Script" uid="uid://0g26x5s8ybya" path="res://Scenes/line_edit.gd" id="2_prfkr"]
+
+[node name="NameSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b4sja")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.079
+anchor_top = 0.338
+anchor_right = 0.922
+anchor_bottom = 0.429
+offset_left = -0.00800323
+offset_top = -0.0240173
+offset_right = -0.144043
+offset_bottom = 0.00799561
+pivot_offset = Vector2(486, 32)
+theme_override_font_sizes/font_size = 20
+text = "Welcome to the world of Money Mash Quest!
+Before you embark on this AMAZING and INCREDIBLE legend of fate and destiny, what is your name?"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.417
+anchor_top = 0.46
+anchor_right = 0.593
+anchor_bottom = 0.546
+offset_left = -0.384033
+offset_top = -0.0800171
+offset_right = -0.136047
+offset_bottom = 0.191986
+placeholder_text = "Your Name?"
+max_length = 16
+script = ExtResource("2_prfkr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.602
+anchor_top = 0.458
+anchor_right = 0.655
+anchor_bottom = 0.548
+offset_left = 0.495911
+offset_top = 0.215973
+offset_right = -0.560059
+offset_bottom = -0.104034
+pivot_offset = Vector2(28, 27)
+theme_override_font_sizes/font_size = 36
+text = ">"
+
+[node name="Name Easter Egg Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249
+anchor_top = 0.56
+anchor_right = 0.78
+anchor_bottom = 0.907
+offset_left = -4.84802
+offset_top = 0.119995
+offset_right = -5.56006
+offset_bottom = 0.263977
+pivot_offset = Vector2(307, 107)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

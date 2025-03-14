@@ -5,16 +5,11 @@ extends Control
 func _ready() -> void:
 	var errorLabel = $Text
 	if Label:
-		errorLabel.text = ("WARNING!\n\nYour existing save file is from version " + CoreInfo.oldSaveVersion + " but you are running version " + CoreInfo.gameVer + "\n\nMoney Mash Quest is still in alpha and issues are likely to arise between updates. It is reccomended that you delete your old save.")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+		errorLabel.text = ("WARNING!\n\nYour existing save file is from version " + Globals.oldSaveVersion + " but you are running version " + Globals.gameVer + "\n\nMoney Mash Quest is still in alpha and issues are likely to arise between updates. It is reccomended that you delete your old save.")
 
 
 func _on_continue_pressed() -> void:
-	$"../..".startgame()
+	Globals.startgame()
 
 
 func _on_exit_pressed() -> void:
@@ -22,5 +17,12 @@ func _on_exit_pressed() -> void:
 
 
 func _on_reset_pressed() -> void:
-	CoreInfo.deletesave()
-	$"../..".startgame()
+	$DeleteSaveConfirm.visible = true
+
+func _on_confirm_pressed() -> void:
+	Globals.deletesave()
+	$DeleteSaveConfirm.visible = false
+	Globals.startgame()
+
+func _on_cancel_pressed() -> void:
+	$DeleteSaveConfirm.visible = false

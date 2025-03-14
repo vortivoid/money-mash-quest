@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://2q2vnpilk0n6"]
+[gd_scene load_steps=4 format=3 uid="uid://2q2vnpilk0n6"]
 
 [ext_resource type="Script" uid="uid://dy0qtiviy7boa" path="res://Scenes/Non-game/warning_message.gd" id="1_1l338"]
+
+[sub_resource type="Gradient" id="Gradient_qgdf6"]
+offsets = PackedFloat32Array(0.993506, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0ph18"]
+gradient = SubResource("Gradient_qgdf6")
+fill_from = Vector2(1, 0)
 
 [node name="WarningMessage" type="Control"]
 layout_mode = 3
@@ -78,6 +85,85 @@ theme_override_colors/font_color = Color(0.94902, 0, 0, 1)
 theme_override_font_sizes/font_size = 21
 text = "Reset"
 
+[node name="DeleteSaveConfirm" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_left = 0.043
+anchor_top = 0.04
+anchor_right = 0.965
+anchor_bottom = 0.949
+offset_left = 0.463997
+offset_top = 0.079998
+offset_right = 0.319946
+offset_bottom = 0.0479736
+pivot_offset = Vector2(531, 305)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="DeleteSaveConfirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.033
+anchor_top = -0.024
+anchor_right = 1.029
+anchor_bottom = 1.027
+offset_left = 0.0460014
+offset_top = 0.136
+offset_right = 0.201904
+offset_bottom = 0.0969849
+pivot_offset = Vector2(559, 313)
+texture = SubResource("GradientTexture2D_0ph18")
+metadata/_edit_lock_ = true
+
+[node name="Confirm" type="Button" parent="DeleteSaveConfirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.274
+anchor_top = 0.61
+anchor_right = 0.399
+anchor_bottom = 0.698
+offset_left = 0.0119934
+offset_top = -0.290009
+offset_right = 0.261993
+offset_bottom = -0.122009
+pivot_offset = Vector2(62, 23)
+text = "Delete"
+metadata/_edit_lock_ = true
+
+[node name="Cancel" type="Button" parent="DeleteSaveConfirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.585
+anchor_top = 0.611
+anchor_right = 0.71
+anchor_bottom = 0.699
+offset_left = -0.27002
+offset_top = 0.121002
+offset_right = -0.0200195
+offset_bottom = 0.288971
+pivot_offset = Vector2(62, 23)
+text = "Cancel"
+metadata/_edit_lock_ = true
+
+[node name="WarningText" type="Label" parent="DeleteSaveConfirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202
+anchor_top = 0.292
+anchor_right = 0.802
+anchor_bottom = 0.419
+offset_left = -0.524002
+offset_top = 0.0119781
+offset_right = 0.27594
+offset_bottom = 0.208984
+pivot_offset = Vector2(322, 41)
+text = "WARNING:
+This will delete your save data forever (unless you manually back it up first i guess)
+Are you sure you want to delete your save data?"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
 [connection signal="pressed" from="Text/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Text/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Text/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="DeleteSaveConfirm/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="DeleteSaveConfirm/Cancel" to="." method="_on_cancel_pressed"]

@@ -12,9 +12,7 @@ func _on_auto_clicker_upgrade_pressed():
 	if Globals.gems >= Globals.autoClickerUpgradePrice:
 		Globals.gems -= Globals.autoClickerUpgradePrice
 		Globals.AutoClickerUpgradeOwned = true
-	else:
-		pass # Put a text thingy here lol
-
+		$AutoClickerUpgrade/AudioStreamPlayer2D.play()
 
 func _on_plane_pressed():
 	if Globals.planeOwned == true:
@@ -24,13 +22,13 @@ func _on_plane_pressed():
 			Globals.gems -= Globals.planePrice
 			Globals.planeOwned = true
 			UpdateShop()
+			$Plane/AudioStreamPlayer2D.play()
 
 func _on_mouse_steroids_upgrade_button_pressed():
 	if Globals.gems >= Globals.mouseSteroidsUpgradePrice:
 		Globals.gems -= Globals.mouseSteroidsUpgradePrice
 		Globals.MouseSteroidsUpgradeOwned = true
-	else:
-		pass # Put a text thingy here too :3
+		$MouseSteroidsUpgradeButton/AudioStreamPlayer2D.play()
 
 func _on_gun_pressed():
 	if Globals.gunOwned == true:
@@ -39,6 +37,7 @@ func _on_gun_pressed():
 		if Globals.gems >= Globals.gunPrice:
 			Globals.gems -= Globals.gunPrice
 			Globals.gunOwned = true
+			$Gun/AudioStreamPlayer2D.play()
 
 ## Other stuff
 func UpdateShop(): ### Updates all important variables in the shop such as labels displaying item costs ###

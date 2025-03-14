@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4yj3ruae1o2a"]
+[gd_scene load_steps=11 format=3 uid="uid://c4yj3ruae1o2a"]
 
 [ext_resource type="Script" uid="uid://bnf5bpphmcvd" path="res://Scenes/Office/office.gd" id="1_xvd0a"]
 [ext_resource type="Script" uid="uid://bs5bww03eoy5k" path="res://Scenes/Office/officeCamera.gd" id="2_unbm2"]
@@ -10,6 +10,13 @@
 [ext_resource type="AudioStream" uid="uid://df4l45j65cc3p" path="res://Audio/BGM/679167__yipyep__chiptune-type-beat-no-bass.mp3" id="8_xvd0a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14mo1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvd0a"]
+bg_color = Color(0.122252, 0.122252, 0.122252, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Office" type="Control"]
 layout_mode = 3
@@ -29,36 +36,6 @@ position = Vector2(577, 323)
 script = ExtResource("2_unbm2")
 metadata/_edit_lock_ = true
 
-[node name="LeaderboardTitle" type="Panel" parent="MainCamera"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 379.0
-offset_top = -287.0
-offset_right = 574.0
-offset_bottom = -224.0
-grow_horizontal = 2
-metadata/_edit_lock_ = true
-
-[node name="Text" type="Label" parent="MainCamera/LeaderboardTitle"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.5
-offset_top = -28.5
-offset_right = 93.5
-offset_bottom = 58.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 19
-text = "Totally Real
-Leaderboard:
-"
-metadata/_edit_lock_ = true
-
 [node name="FakeLeaderboard" type="Panel" parent="MainCamera"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -68,6 +45,7 @@ offset_top = -218.0
 offset_right = 574.0
 offset_bottom = 273.0
 grow_horizontal = 2
+metadata/_edit_lock_ = true
 
 [node name="Names" type="Label" parent="MainCamera/FakeLeaderboard"]
 layout_mode = 1
@@ -112,15 +90,47 @@ Rug: -1
 
 Goaty: N/A"
 
+[node name="LeaderboardTitle" type="Panel" parent="MainCamera/FakeLeaderboard"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.0
+offset_top = -69.0
+offset_right = 119.0
+offset_bottom = -6.0
+grow_horizontal = 2
+metadata/_edit_lock_ = true
+
+[node name="Text" type="Label" parent="MainCamera/FakeLeaderboard/LeaderboardTitle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -28.5
+offset_right = 93.5
+offset_bottom = 58.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 19
+text = "Totally Real
+Leaderboard:
+"
+metadata/_edit_lock_ = true
+
 [node name="CoinDisplay" type="Panel" parent="MainCamera"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -198.0
-offset_top = -323.0
+offset_top = -272.0
 offset_right = 203.0
-offset_bottom = -223.0
+offset_bottom = -172.0
 grow_horizontal = 2
+metadata/_edit_lock_ = true
 
 [node name="CoinCounter" type="Label" parent="MainCamera/CoinDisplay"]
 layout_mode = 1
@@ -132,18 +142,24 @@ offset_top = 18.0
 offset_right = 574.5
 offset_bottom = 131.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 38
 text = "0 (broke ass💀)
 "
 clip_text = true
 metadata/_edit_lock_ = true
 
-[node name="10" type="Sprite2D" parent="MainCamera"]
+[node name="CoinIcon" type="Sprite2D" parent="MainCamera/CoinDisplay"]
+position = Vector2(51, 49)
+scale = Vector2(0.0885714, 0.0885714)
+texture = ExtResource("7_a2sxv")
+
+[node name="NGIReview" type="Sprite2D" parent="MainCamera"]
 position = Vector2(-547, -168)
 scale = Vector2(0.0478516, 0.063889)
 texture = ExtResource("3_q58a0")
+metadata/_edit_lock_ = true
 
-[node name="NGI-Review" type="Label" parent="MainCamera/10"]
+[node name="NGI-Review" type="Label" parent="MainCamera/NGIReview"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -159,12 +175,13 @@ time ever!! 10/10\" - NGI"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ScreamEmoji" type="Sprite2D" parent="MainCamera"]
+[node name="FreeRobux" type="Sprite2D" parent="MainCamera"]
 position = Vector2(-363, 300)
 scale = Vector2(0.0682566, 0.0401716)
 texture = ExtResource("4_hoad8")
+metadata/_edit_lock_ = true
 
-[node name="FreeRobux" type="Button" parent="MainCamera/ScreamEmoji"]
+[node name="FreeRobux" type="Button" parent="MainCamera/FreeRobux"]
 offset_left = -3135.0
 offset_top = -573.0
 offset_right = 1845.0
@@ -175,24 +192,23 @@ text = "<Press for free robux!!>"
 flat = true
 
 [node name="Main Button" type="Button" parent="MainCamera"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
+clip_contents = true
+anchors_preset = -1
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -199.0
-offset_right = 196.0
-offset_bottom = 186.0
+offset_left = -215.0
+offset_top = -181.0
+offset_right = 221.0
+offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(194, 203)
+pivot_offset = Vector2(219, 181)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_14mo1")
 icon = ExtResource("5_dd2rk")
 flat = true
 icon_alignment = 1
 expand_icon = true
+metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainCamera/Main Button"]
 position = Vector2(-364, -249)
@@ -214,6 +230,26 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.209172, 0.63922, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Save Progress"
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="MainCamera/SaveData"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.048
+anchor_top = 0.093
+anchor_right = 1.466
+anchor_bottom = 0.907
+offset_left = -0.0720215
+offset_top = 0.000999928
+offset_right = -0.0740051
+offset_bottom = -0.00100327
+pivot_offset = Vector2(34, 18)
+theme_override_font_sizes/font_size = 25
+text = "Saved!"
+
+[node name="savetexttime" type="Timer" parent="MainCamera/SaveData"]
+wait_time = 2.0
 
 [node name="WorldMapButton" type="Button" parent="MainCamera"]
 anchors_preset = 8
@@ -222,21 +258,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -571.5
-offset_top = -76.0
+offset_top = -19.0
 offset_right = -438.5
-offset_bottom = -12.0
+offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "Spend Coins & Gems
-to buy items & upgrades"
 theme_override_font_sizes/font_size = 20
 text = "World Map
 "
-
-[node name="CoinIcon" type="Sprite2D" parent="MainCamera"]
-position = Vector2(-147, -274)
-scale = Vector2(0.0885714, 0.0885714)
-texture = ExtResource("7_a2sxv")
+metadata/_edit_lock_ = true
 
 [node name="AutoClickTimer" type="Timer" parent="."]
 autostart = true
@@ -250,13 +280,28 @@ stream = ExtResource("8_xvd0a")
 volume_db = -6.121
 autoplay = true
 
-[connection signal="pressed" from="MainCamera/ScreamEmoji/FreeRobux" to="." method="_on_secret_button_pressed"]
+[node name="PlayerBankText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.051
+offset_left = 379.0
+offset_right = 204.0
+offset_bottom = 18.952
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_xvd0a")
+text = "Example's Bank"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainCamera/FreeRobux/FreeRobux" to="." method="_on_secret_button_pressed"]
 [connection signal="button_down" from="MainCamera/Main Button" to="." method="_on_main_button_button_down"]
 [connection signal="button_up" from="MainCamera/Main Button" to="." method="_on_main_button_button_up"]
 [connection signal="mouse_entered" from="MainCamera/Main Button" to="." method="_on_main_button_mouse_entered"]
 [connection signal="mouse_exited" from="MainCamera/Main Button" to="." method="_on_main_button_mouse_exited"]
 [connection signal="pressed" from="MainCamera/Main Button" to="." method="_on_main_button_pressed"]
 [connection signal="pressed" from="MainCamera/SaveData" to="." method="_on_save_data_pressed"]
+[connection signal="timeout" from="MainCamera/SaveData/savetexttime" to="." method="_on_savetexttime_timeout"]
 [connection signal="pressed" from="MainCamera/WorldMapButton" to="." method="_on_shop_button_pressed"]
 [connection signal="timeout" from="AutoClickTimer" to="." method="_on_auto_click_timer_timeout"]
 [connection signal="timeout" from="AutosaveTimer" to="." method="_on_autosave_timer_timeout"]
