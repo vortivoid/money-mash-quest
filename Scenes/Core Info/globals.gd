@@ -10,6 +10,7 @@ var autosave_disabled = false
 var money = 0
 var gems = 0
 var totalCoinsEver = 0
+var playerName = "playerName"
 
 # Coin Shop Items
 var mouseSteroidsOwned = 0
@@ -43,6 +44,7 @@ func save():
 		"money": money,
 		"gems": gems,
 		"totalCoinsEver": totalCoinsEver,
+		"playerName": playerName,
 		"items_owned": {
 			"mouseSteroidsOwned": mouseSteroidsOwned,
 			"autoClickersOwned": autoClickersOwned,
@@ -70,6 +72,7 @@ func loadsave():
 		money = game_data.get("money", 0)
 		gems = game_data.get("gems", 0)
 		totalCoinsEver = game_data.get("totalCoinsEver", 0)
+		playerName = game_data.get("playerName", "playerName")
 		
 		# Items Owned (stored in a nested dictionary)
 		var items_owned = game_data.get("items_owned", {})
@@ -115,10 +118,10 @@ func savecheck():
 				print("Loaded warning message scene.")
 	else:
 		print("No save file detected!")
-		startgame()
+		get_tree().change_scene_to_file("res://Scenes/name_select.tscn")
 
 func startgame():
-	print("Starting game with detected save data")
+	print("Starting game with detected save data: " +playerName)
 	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
 	loadsave()
 	autosave_disabled = false

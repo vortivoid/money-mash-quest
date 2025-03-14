@@ -4,7 +4,8 @@ extends Control
 func _ready() -> void:
 	$MainCamera.make_current()
 	UpdateValues()
-
+	$PlayerBankText.text = str(Globals.playerName) + "'s Bank"
+	
 func _process(_delta: float) -> void:
 	UpdateValues()
 
