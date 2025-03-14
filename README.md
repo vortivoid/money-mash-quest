@@ -7,3 +7,4 @@ Download Money Mash Quest today and embark on a journey that may or may not resu
 
 # Notice
 Money Mash Quest is not a serious project. This game was made as a joke & an excuse to learn more about Godot. Updates tend to happen whenever I get bored and decide to actually do something with the game lol.
+![mmq-money-icon](https://github.com/user-attachments/assets/e5ae8181-052e-4ca8-b133-7125415ed136)
