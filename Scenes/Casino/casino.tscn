@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8eoa8usrok3e"]
+[gd_scene load_steps=13 format=3 uid="uid://b8eoa8usrok3e"]
 
 [ext_resource type="Script" uid="uid://cty3ujr543jqh" path="res://Scenes/Casino/casino.gd" id="1_4sgjb"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_ijs1l"]
 [ext_resource type="Texture2D" uid="uid://c4oriyl2hva3u" path="res://Icons/Casino/babygamble.png" id="3_yujan"]
 [ext_resource type="Texture2D" uid="uid://chxbs328hdum2" path="res://Icons/Casino/standardgamble.png" id="4_tx8va"]
 [ext_resource type="Script" uid="uid://bnhiwqlep1p8j" path="res://Scenes/Casino/baby_gamble.gd" id="4_xaoll"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="5_a1nbg"]
 [ext_resource type="Texture2D" uid="uid://dvyhf6rgpnioq" path="res://Icons/Casino/coolergamble.png" id="5_i5meb"]
 [ext_resource type="Script" uid="uid://b0fenkrokgspi" path="res://Scenes/Casino/standard_gamble.gd" id="6_a1vgo"]
 [ext_resource type="Script" uid="uid://crrnc6fs7g5jv" path="res://Scenes/Casino/cooler_gamble.gd" id="8_n2giw"]
@@ -131,6 +132,11 @@ text = "1000"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BabyGamble"]
+position = Vector2(-364, -249)
+stream = ExtResource("5_a1nbg")
+volume_db = 9.964
+
 [node name="StandardGamble" type="Button" parent="." groups=["GambleCooldown"]]
 layout_mode = 2
 offset_left = -85.0
@@ -184,6 +190,11 @@ text = "10,000"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StandardGamble"]
+position = Vector2(-364, -249)
+stream = ExtResource("5_a1nbg")
+volume_db = 9.964
+
 [node name="CoolerGamble" type="Button" parent="." groups=["GambleCooldown"]]
 layout_mode = 2
 offset_left = 325.0
@@ -236,6 +247,11 @@ theme_override_font_sizes/normal_font_size = 400
 text = "100,000"
 fit_content = true
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CoolerGamble"]
+position = Vector2(-364, -249)
+stream = ExtResource("5_a1nbg")
+volume_db = 9.964
 
 [node name="CasinoBackground" type="Sprite2D" parent="."]
 self_modulate = Color(0.674815, 0.674815, 0.674815, 1)

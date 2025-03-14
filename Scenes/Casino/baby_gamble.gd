@@ -1,5 +1,4 @@
 extends Button
-
 const COST = 1000
 
 func _on_pressed():
@@ -32,6 +31,7 @@ func _on_pressed():
 			Globals.money -= COST
 			$"../ResultText".text = ("Nothing happened!")
 			print("No Prize...")
+		$AudioStreamPlayer2D.play()
 		
 	# Not enough money
 	else:

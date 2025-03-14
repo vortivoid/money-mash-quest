@@ -23,7 +23,6 @@ config/icon="uid://dj5npoy0uxnkv"
 [autoload]
 
 Globals="*res://Scenes/Core Info/globals.gd"
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [display]
 

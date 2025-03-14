@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwn4sx63iopgm"]
+[gd_scene load_steps=10 format=3 uid="uid://bwn4sx63iopgm"]
 
 [ext_resource type="Script" uid="uid://hy01gxse2xtj" path="res://Scenes/Shop/shop.gd" id="1_nl6qo"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_rxyrp"]
 [ext_resource type="Texture2D" uid="uid://5pm2e0wckrf" path="res://Icons/Shop/MouseSteroidsIcon.png" id="2_7rf2c"]
 [ext_resource type="Texture2D" uid="uid://wvy4ogcew6qv" path="res://Icons/Shop/AutoClickerIcon.png" id="3_6ok2j"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="4_oqg8q"]
 [ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="4_tlsxc"]
 [ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="6_rjc2l"]
 [ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="7_fobo1"]
@@ -94,6 +95,11 @@ text = "Buy Max"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MouseSteroids"]
+position = Vector2(-364, -249)
+stream = ExtResource("4_oqg8q")
+volume_db = 9.964
+
 [node name="AutoClicker" type="Button" parent="."]
 layout_mode = 2
 offset_left = 500.0
@@ -168,6 +174,11 @@ theme_override_font_sizes/font_size = 15
 text = "Buy Max"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AutoClicker"]
+position = Vector2(-364, -249)
+stream = ExtResource("4_oqg8q")
+volume_db = 9.964
 
 [node name="Layout" type="Control" parent="."]
 layout_mode = 3
