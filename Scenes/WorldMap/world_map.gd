@@ -1,52 +1,25 @@
 extends Control
 
+var maps: Array
+var current_map: Node = null
 
-func _on_office_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Office/office.tscn")
+func _ready() -> void:
+	maps = [
+		$GrasslandMap,
+		$SandlandMap,
+		$SnowlandMap,
+		$MoonMap
+	]
+	for map in maps:
+		map.visible = false
 
+func _on_area_selector_item_selected(index: int) -> void:
+	if current_map:
+		current_map.visible = false
+		
+	current_map = maps[index]
+	current_map.visible = true
 
-func _on_shop_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Shop/shop.tscn")
-
-
-func _on_casino_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Casino/casino.tscn")
-
-
-#Button Scaling
-
-
-func _on_office_button_mouse_entered() -> void:
-	$"Mmq-map/OfficeButton".scale += Vector2(0.2, 0.2)
-
-
-func _on_office_button_mouse_exited() -> void:
-	$"Mmq-map/OfficeButton".scale -= Vector2(0.2, 0.2)
-
-
-func _on_shop_button_mouse_entered() -> void:
-	$"Mmq-map/ShopButton".scale += Vector2(0.2, 0.2)
-
-
-func _on_shop_button_mouse_exited() -> void:
-	$"Mmq-map/ShopButton".scale -= Vector2(0.2, 0.2)
-
-
-func _on_casino_button_mouse_entered() -> void:
-	$"Mmq-map/CasinoButton".scale += Vector2(0.2, 0.2)
-
-
-func _on_casino_button_mouse_exited() -> void:
-	$"Mmq-map/CasinoButton".scale -= Vector2(0.2, 0.2)
-
-
-func _on_office_button_button_down() -> void:
-	$"Mmq-map/OfficeButton".scale -= Vector2(0.2, 0.2)
-
-
-func _on_shop_button_button_down() -> void:
-	$"Mmq-map/ShopButton".scale -= Vector2(0.2, 0.2)
-
-
-func _on_casino_button_button_down() -> void:
-	$"Mmq-map/CasinoButton".scale -= Vector2(0.2, 0.2)
+# Music loop
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()
