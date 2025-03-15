@@ -2,13 +2,13 @@ extends LineEdit
 @onready var secret_text = $"../Name Easter Egg Text"
 
 var secret_names = {
-	"No fucking way it's the person who made me wtffffff???": ["skye", "seppy"],
-	"Fuck off commie.": ["charlac", "plaza", "charlacplaza"],
+	"No fucking way it's the person who made me wtffffff???": ["skye", "seppy", "sepskye"],
+	"Fuck off commie.": ["charlac", "plaza", "charlacplaza", "lorddeathkiller"],
 	"I SEE YOU.": ["charliecringe", "charlietheautisticlad"],
 	"Which one though?": ["charlie"],
 	"Shouldn't you be like, sailing the seas and discussing the economy?": ["imp", "string", "longingstring", "longingstring65"],
 	"no way it's DrAgOn Ninja XYZmoc The Meme Thief!!1!": ["moc", "zmoc"],
-	"Cheese Graters, Beans, and a Bin(fx). What more could one want?": ["finn", "finnfx"],
+	"Cheese Graters, Beans, and a Bin(fx). What more could one want?": ["finn", "finnfx", "binfx"],
 	"Second-hand automobile skyscraper stick insect rug": ["cosmo", "derser", "furrsa", "rug", "cosmothefox", "cosmothefoxxo", "cosmothefoxess"],
 	"Damn girl, are you community storage? Because I wanna steal from you <3": ["niemond"],
 	"Wow. How original.": ["name", "123", "abc"],
@@ -27,9 +27,39 @@ var secret_names = {
 	"I'M THINKING MIKU MIKU OOOEEEOOO": ["miku", "hatsune", "hatsunemiku"],
 	"OH GOD OH FUCK OH NO": ["herobrine"],
 	"Well that's just rude": ["fuck", "shit", "dick", "cunt", "bitch"],
-	"Neither do I lol": ["idk", "idfk", "idontknow", "idon'tknow"]
+	"Neither do I lol": ["idk", "idfk", "idontknow", "idon'tknow"],
+	"Fear.": ["blubby"],
+	"The bread kind or the cloth wearing death spirit kind?": ["crumpet"],
+	"My babyyy": ["twiggy"],
+	"Lulu will remember this betrayal": ["auru"],
+	"Auru will remember this betrayal": ["lulu"],
+	"...i hate you": ["legends77", "legends77yt"],
+	"I know": ["iloveyou"],
+	"You're really trying hard to find these secret messages, aren't ya": ["yourname?"],
+	"(you feel a chilling breeze...)": ["invail", "theinvail"],
+	"Krydos > Crimzan": ["zekronia"],
+	"Idk enough abt the lore to make a witty remark here": ["flotopia", "flonia", "flonianisles"],
+	"HAR HAR HARHAR HAR HAR HARHAR HAR HARRRRR": ["freddy", "freddyfazbear", "fazbear"],
+	"Stop gooning on a clicker game": ["frenni", "meru", "bonfie", "chiku", "fexa"],
+	"I am placing blocks and shit cuz I'm in fucking Minecraafft": ["minecraft"],
+	"I.... AM STEVE!": ["steve"],
+	"Idk that's why I'm asking you": ["whatismyname", "whatismyname?"],
+	"??????????????": ["?", "??", "???", "????", "?????", "??????", "???????", "????????", "?????????", "??????????", "???????????", "????????????", "?????????????", "??????????????", "???????????????"],
+	"Maximum confusion reached": ["????????????????"],
+	"Please get some taste": ["warthunder"],
+	"I fear the Nintendo Ninjas will assasinate me if I say anything wrong here": ["mario", "luigi", "peach", "bowser", "toad", "yoshi"],
+	"Damn, if only there wasn't a 16 character limit, then i'dve been able to give you a fun witty remark about Brum Brum Simulator. Alas, I cannot.": ["brumbrumsimulato"],
+	"Wohohohohoooooooooaaahohohohoooooahoohoo story of undertaleeee": ["undertale"],
+	"Maybe it's the way you're dressed?": ["sans"],
+	"NYEH HEH HEH!": ["papyrus"],
+	"yea, i am": ["funny"],
+	":3": [":3"],
+	"Fuckin' furry": [">w<", "owo"],
+	"Fuckin' weeb": ["uwu"],
+	"Crazy? I was crazy once.": ["crazy"],
+	"You feel an evil presence watching you": ["terraria"],
+	"A GOD DOES NOT FEAR DEATH!": ["calamity"]
 }
-
 
 
 func _on_text_changed(new_text: String) -> void:
