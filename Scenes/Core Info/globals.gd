@@ -1,7 +1,7 @@
 ### This script stores all the info in the game that should be saved when saving the game, as well as storing values for other scripts to access ###
 extends Node
 
-var gameVer = "Alpha 1.8.1"
+var gameVer = "Alpha 1.8.2"
 const save_path = "user://save.data"
 var autosave_disabled = false
 
