@@ -36,6 +36,10 @@ enabled=PackedStringArray()
 
 GambleCooldown="Objects that need to be disabled during gambling cooldown"
 
+[gui]
+
+timers/tooltip_delay_sec=0.0
+
 [rendering]
 
 renderer/rendering_method="mobile"
