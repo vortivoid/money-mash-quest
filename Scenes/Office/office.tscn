@@ -268,6 +268,23 @@ text = "World Map
 "
 metadata/_edit_lock_ = true
 
+[node name="MainMenuButton" type="Button" parent="MainCamera"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -267.0
+offset_right = -454.0
+offset_bottom = -222.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(57, 22)
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
+metadata/_edit_lock_ = true
+
 [node name="AutoClickTimer" type="Timer" parent="."]
 autostart = true
 
@@ -303,6 +320,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="MainCamera/SaveData" to="." method="_on_save_data_pressed"]
 [connection signal="timeout" from="MainCamera/SaveData/savetexttime" to="." method="_on_savetexttime_timeout"]
 [connection signal="pressed" from="MainCamera/WorldMapButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="MainCamera/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="timeout" from="AutoClickTimer" to="." method="_on_auto_click_timer_timeout"]
 [connection signal="timeout" from="AutosaveTimer" to="." method="_on_autosave_timer_timeout"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

@@ -14,9 +14,10 @@ func doclick():
 	#Increases coin count based on how many mouse steroids are owned
 	if Globals.mouseSteroidsOwned == 0:
 		Globals.money += 1
+		#If player has mouse steroids, checks if they have the mouse steroids upgrade, if so then doubles the output
 	else:
-		if Globals.MouseSteroidsUpgradeOwned:
-			Globals.money += ((Globals.MouseSteroidsOwned + 1) * 2)
+		if Globals.MouseSteroidsUpgradeOwned == true:
+			Globals.money += ((Globals.mouseSteroidsOwned + 1) * 2)
 		else:
 			Globals.money += (Globals.mouseSteroidsOwned + 1)
 	
@@ -85,7 +86,7 @@ func doautoclick():
 			Globals.money += 1
 		else:
 			if Globals.MouseSteroidsUpgradeOwned:
-				Globals.money += ((Globals.MouseSteroidsOwned + 1) * 2)
+				Globals.money += ((Globals.mouseSteroidsOwned + 1) * 2)
 			else:
 				Globals.money += (Globals.mouseSteroidsOwned + 1)
 	else:
@@ -106,3 +107,8 @@ func _on_audio_stream_player_finished() -> void:
 
 func _on_savetexttime_timeout() -> void:
 	$MainCamera/SaveData/Label.visible = false
+
+
+func _on_main_menu_button_pressed() -> void:
+	Globals.save()
+	get_tree().change_scene_to_file("res://Scenes/MainMenu/main_menu.tscn")
