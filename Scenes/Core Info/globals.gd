@@ -21,8 +21,8 @@ var mouseSteroidsPrice = 150
 var autoClickersPrice = 25
 
 # Gem Shop Items
-var MouseSteroidsUpgradeOwned = false
-var AutoClickerUpgradeOwned = false
+var mouseSteroidsUpgradeOwned = false
+var autoClickerUpgradeOwned = false
 var planeOwned = false
 var gunOwned = false
 
@@ -48,6 +48,8 @@ func save():
 		"items_owned": {
 			"mouseSteroidsOwned": mouseSteroidsOwned,
 			"autoClickersOwned": autoClickersOwned,
+			"mouseSteroidsUpgradeOwned": mouseSteroidsOwned,
+			"autoClickerUpgradeOwned": autoClickerUpgradeOwned,
 			"planeOwned": planeOwned,
 			"gunOwned": gunOwned,
 		}
@@ -78,6 +80,8 @@ func loadsave():
 		var items_owned = game_data.get("items_owned", {})
 		mouseSteroidsOwned = items_owned.get("mouseSteroidsOwned", 0)
 		autoClickersOwned = items_owned.get("autoClickersOwned", 0)
+		autoClickerUpgradeOwned = items_owned.get("autoClickerUpgradeOwned", false)
+		mouseSteroidsUpgradeOwned = items_owned.get("mouseSteroidsUpgradeOwned", false)
 		planeOwned = items_owned.get("planeOwned", false)
 		gunOwned = items_owned.get("gunOwned", false)
 		
