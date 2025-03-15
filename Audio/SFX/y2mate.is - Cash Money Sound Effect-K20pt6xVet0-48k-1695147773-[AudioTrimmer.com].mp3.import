@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://x5bjbwnpmbu2"
+path="res://.godot/imported/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3-5d4ca99895b1841116165c8c10b83502.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3-5d4ca99895b1841116165c8c10b83502.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

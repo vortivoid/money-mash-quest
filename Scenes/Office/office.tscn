@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cqesbvxny8xjt" path="res://Icons/Main/10.jpg" id="3_q58a0"]
 [ext_resource type="Texture2D" uid="uid://gssa8bf510pq" path="res://Icons/Main/ScreamEmoji.png" id="4_hoad8"]
 [ext_resource type="Texture2D" uid="uid://dj5npoy0uxnkv" path="res://Icons/Main/mmq-money-icon.png" id="5_dd2rk"]
-[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="6_boyou"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="6_boyou"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="7_a2sxv"]
 [ext_resource type="AudioStream" uid="uid://df4l45j65cc3p" path="res://Audio/BGM/679167__yipyep__chiptune-type-beat-no-bass.mp3" id="8_xvd0a"]
 
