@@ -72,11 +72,6 @@ theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MouseSteroidsUpgradeButton"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_b3ub6")
-volume_db = 9.964
-
 [node name="AutoClickerUpgrade" type="Button" parent="."]
 layout_mode = 2
 offset_left = 500.0
@@ -123,11 +118,6 @@ scale = Vector2(0.860303, 0.897695)
 theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AutoClickerUpgrade"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_b3ub6")
-volume_db = 9.964
 
 [node name="Gun" type="Button" parent="."]
 layout_mode = 2
@@ -178,11 +168,6 @@ theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Gun"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_b3ub6")
-volume_db = 9.964
-
 [node name="Plane" type="Button" parent="."]
 layout_mode = 2
 offset_left = 175.0
@@ -231,11 +216,6 @@ scale = Vector2(0.860303, 0.897695)
 theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Plane"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_b3ub6")
-volume_db = 9.964
 
 [node name="Layout" type="Control" parent="."]
 layout_mode = 3
@@ -321,6 +301,9 @@ z_index = -2
 position = Vector2(573.111, 325)
 scale = Vector2(0.603704, 0.603704)
 texture = ExtResource("9_emegm")
+
+[node name="PurchaseSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_b3ub6")
 
 [connection signal="pressed" from="MouseSteroidsUpgradeButton" to="." method="_on_mouse_steroids_upgrade_button_pressed"]
 [connection signal="pressed" from="AutoClickerUpgrade" to="." method="_on_auto_clicker_upgrade_pressed"]

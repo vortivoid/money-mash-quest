@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwn4sx63iopgm"]
+[gd_scene load_steps=10 format=3 uid="uid://bwn4sx63iopgm"]
 
 [ext_resource type="Script" uid="uid://hy01gxse2xtj" path="res://Scenes/Shop/shop.gd" id="1_nl6qo"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_rxyrp"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="4_tlsxc"]
 [ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="6_rjc2l"]
 [ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="7_fobo1"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="8_oqg8q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fobo1"]
 bg_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -19,10 +20,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nl6qo")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_rjc2l")
-autoplay = true
 
 [node name="MouseSteroids" type="Button" parent="."]
 layout_mode = 2
@@ -249,10 +246,18 @@ position = Vector2(124, 21)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("4_tlsxc")
 
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rjc2l")
+autoplay = true
+
+[node name="PurchaseSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_oqg8q")
+
 [connection signal="pressed" from="MouseSteroids" to="." method="_on_mouse_steroids_pressed"]
 [connection signal="pressed" from="MouseSteroids/BuyMax" to="." method="_on_buy_max_mousesteroids_pressed"]
 [connection signal="pressed" from="AutoClicker" to="." method="_on_auto_clicker_pressed"]
 [connection signal="pressed" from="AutoClicker/BuyMax" to="." method="_on_buy_max_autoclicker_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="GemShopButton" to="." method="_on_gem_shop_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="PurchaseSFX" to="." method="_on_audio_stream_player_finished"]

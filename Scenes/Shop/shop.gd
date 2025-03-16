@@ -17,7 +17,7 @@ func _on_mouse_steroids_pressed():
 	if Globals.money >= Globals.mouseSteroidsPrice:
 		Globals.money -= Globals.mouseSteroidsPrice
 		Globals.mouseSteroidsOwned += 1
-		$MouseSteroids/AudioStreamPlayer2D.play()
+		$PurchaseSFX.play()
 		
 func _on_buy_max_mousesteroids_pressed():
 	while Globals.money >= Globals.mouseSteroidsPrice:
@@ -29,7 +29,7 @@ func _on_auto_clicker_pressed():
 	if Globals.money >= Globals.autoClickersPrice:
 		Globals.money -= Globals.autoClickersPrice
 		Globals.autoClickersOwned += 1
-		$AutoClicker/AudioStreamPlayer2D.play()
+		$PurchaseSFX.play()
 
 func _on_buy_max_autoclicker_pressed():
 	while Globals.money >= Globals.autoClickersPrice:
