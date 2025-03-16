@@ -12,6 +12,8 @@ func _ready() -> void:
 	]
 	for map in maps:
 		map.visible = false
+		$GrasslandMap.visible = true
+		current_map = $GrasslandMap
 
 func _on_area_selector_item_selected(index: int) -> void:
 	if current_map:

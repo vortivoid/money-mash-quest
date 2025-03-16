@@ -39,6 +39,7 @@ offset_top = -0.200012
 offset_right = -0.199951
 offset_bottom = -0.304012
 pivot_offset = Vector2(55.2, 16.2)
+selected = 0
 item_count = 4
 popup/item_0/text = "Grassland"
 popup/item_0/id = 0
@@ -50,7 +51,6 @@ popup/item_3/text = "Moon"
 popup/item_3/id = 3
 
 [node name="GrasslandMap" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(759, 398)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_iv8dp")
@@ -358,39 +358,3 @@ script = ExtResource("6_qvxal")
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="item_selected" from="AreaSelector" to="." method="_on_area_selector_item_selected"]
-[connection signal="button_down" from="GrasslandMap/GrassCasinoButton" to="." method="_on_casino_button_button_down"]
-[connection signal="mouse_entered" from="GrasslandMap/GrassCasinoButton" to="." method="_on_casino_button_mouse_entered"]
-[connection signal="mouse_exited" from="GrasslandMap/GrassCasinoButton" to="." method="_on_casino_button_mouse_exited"]
-[connection signal="pressed" from="GrasslandMap/GrassCasinoButton" to="." method="_on_casino_button_pressed"]
-[connection signal="button_down" from="SandlandMap/SandShopButton" to="." method="_on_shop_button_button_down"]
-[connection signal="mouse_entered" from="SandlandMap/SandShopButton" to="." method="_on_shop_button_mouse_entered"]
-[connection signal="mouse_exited" from="SandlandMap/SandShopButton" to="." method="_on_shop_button_mouse_exited"]
-[connection signal="pressed" from="SandlandMap/SandShopButton" to="." method="_on_shop_button_pressed"]
-[connection signal="button_down" from="SandlandMap/SandCasinoButton" to="." method="_on_casino_button_button_down"]
-[connection signal="mouse_entered" from="SandlandMap/SandCasinoButton" to="." method="_on_casino_button_mouse_entered"]
-[connection signal="mouse_exited" from="SandlandMap/SandCasinoButton" to="." method="_on_casino_button_mouse_exited"]
-[connection signal="pressed" from="SandlandMap/SandCasinoButton" to="." method="_on_casino_button_pressed"]
-[connection signal="button_down" from="SnowlandMap/SnowOfficeButton" to="." method="_on_office_button_button_down"]
-[connection signal="mouse_entered" from="SnowlandMap/SnowOfficeButton" to="." method="_on_office_button_mouse_entered"]
-[connection signal="mouse_exited" from="SnowlandMap/SnowOfficeButton" to="." method="_on_office_button_mouse_exited"]
-[connection signal="pressed" from="SnowlandMap/SnowOfficeButton" to="." method="_on_office_button_pressed"]
-[connection signal="button_down" from="SnowlandMap/SnowShopButton" to="." method="_on_shop_button_button_down"]
-[connection signal="mouse_entered" from="SnowlandMap/SnowShopButton" to="." method="_on_shop_button_mouse_entered"]
-[connection signal="mouse_exited" from="SnowlandMap/SnowShopButton" to="." method="_on_shop_button_mouse_exited"]
-[connection signal="pressed" from="SnowlandMap/SnowShopButton" to="." method="_on_shop_button_pressed"]
-[connection signal="button_down" from="SnowlandMap/SnowCasinoButton" to="." method="_on_casino_button_button_down"]
-[connection signal="mouse_entered" from="SnowlandMap/SnowCasinoButton" to="." method="_on_casino_button_mouse_entered"]
-[connection signal="mouse_exited" from="SnowlandMap/SnowCasinoButton" to="." method="_on_casino_button_mouse_exited"]
-[connection signal="pressed" from="SnowlandMap/SnowCasinoButton" to="." method="_on_casino_button_pressed"]
-[connection signal="button_down" from="MoonMap/MoonOfficeButton" to="." method="_on_office_button_button_down"]
-[connection signal="mouse_entered" from="MoonMap/MoonOfficeButton" to="." method="_on_office_button_mouse_entered"]
-[connection signal="mouse_exited" from="MoonMap/MoonOfficeButton" to="." method="_on_office_button_mouse_exited"]
-[connection signal="pressed" from="MoonMap/MoonOfficeButton" to="." method="_on_office_button_pressed"]
-[connection signal="button_down" from="MoonMap/MoonShopButton" to="." method="_on_shop_button_button_down"]
-[connection signal="mouse_entered" from="MoonMap/MoonShopButton" to="." method="_on_shop_button_mouse_entered"]
-[connection signal="mouse_exited" from="MoonMap/MoonShopButton" to="." method="_on_shop_button_mouse_exited"]
-[connection signal="pressed" from="MoonMap/MoonShopButton" to="." method="_on_shop_button_pressed"]
-[connection signal="button_down" from="MoonMap/MoonCasinoButton" to="." method="_on_casino_button_button_down"]
-[connection signal="mouse_entered" from="MoonMap/MoonCasinoButton" to="." method="_on_casino_button_mouse_entered"]
-[connection signal="mouse_exited" from="MoonMap/MoonCasinoButton" to="." method="_on_casino_button_mouse_exited"]
-[connection signal="pressed" from="MoonMap/MoonCasinoButton" to="." method="_on_casino_button_pressed"]
