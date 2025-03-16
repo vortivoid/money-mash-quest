@@ -41,7 +41,7 @@ func _on_gun_pressed():
 
 ## Other stuff
 func UpdateShop(): ### Updates all important variables in the shop such as labels displaying item costs ###
-	if Globals.MouseSteroidsUpgradeOwned:
+	if Globals.mouseSteroidsUpgradeOwned:
 		$MouseSteroidsUpgradeButton.disabled = true
 		$MouseSteroidsUpgradeButton/GemIcon/ItemCost.text = "Owned!"
 	else:
