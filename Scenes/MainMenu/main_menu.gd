@@ -34,3 +34,10 @@ func _on_done_button_pressed() -> void:
 # Loop audio
 func _on_audio_stream_player_finished() -> void:
 	$AudioStreamPlayer.play()
+
+
+func _on_credits_button_pressed() -> void:
+	$Credits.visible = true
+
+func _on_credits_done_button_pressed() -> void:
+	$Credits.visible = false
