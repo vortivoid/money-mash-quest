@@ -55,10 +55,19 @@ var secret_names = {
 	"yea, i am": ["funny"],
 	":3": [":3"],
 	"Fuckin' furry": [">w<", "owo"],
-	"Fuckin' weeb": ["uwu"],
+	"Fuckin' weeb": ["uwu", "anime", "senpai", "onichan", "oni-chan"],
 	"Crazy? I was crazy once.": ["crazy"],
 	"You feel an evil presence watching you": ["terraria"],
-	"A GOD DOES NOT FEAR DEATH!": ["calamity"]
+	"A GOD DOES NOT FEAR DEATH!": ["calamity"],
+	"NEVER GONNA GIVE YOU UP, NEVER GONNA LET YOU DOWN, NEVER GONNA RUN AROUND AND DESERT YOU!": ["rickroll", "rickastley"],
+	"hahahahahhahaahhaahahhhahahahaahahahahahahahahahaahahahahahaahahaahhahahhahhahhahahahahahahahhhahhhaahaahhahahhaahhahahhahhahhahhahahhahhahhahahahahhahhahhahahhahhahhahahhahhahhahahhahhahhahhahhahhahhahahhahhahhahhahhahhahhahhahhahhahhahhahahhahahhahhahhahhahhahhahhahhahhahhahhahhahhahahhahhahhahhahhahhhahhahhahhahhahhahhahha": ["poo"],
+	"An easter egg for an easter bunny, how fitting": ["easterbunny"],
+	"Selling teeth for money?? What kind of rediculous business model is that?!?!": ["toothfairy"],
+	"HO HO HO": ["santa", "santaclaus"],
+	"Aren't you rich enough already?": ["elon", "musk", "elonmusk"],
+	"Okay but really, what IS the frog doing?": ["watdfrogdoin", "whatthefrogdoing", "whatdafrogdoing", "watdafrogdoin"],
+	"cunt": ["trump", "donaldtrump"],
+	"*dies from dancing too fast*": ["camellia"]
 }
 
 
