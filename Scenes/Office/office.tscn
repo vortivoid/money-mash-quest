@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4yj3ruae1o2a"]
+[gd_scene load_steps=12 format=3 uid="uid://c4yj3ruae1o2a"]
 
 [ext_resource type="Script" uid="uid://bnf5bpphmcvd" path="res://Scenes/Office/office.gd" id="1_xvd0a"]
 [ext_resource type="Script" uid="uid://bs5bww03eoy5k" path="res://Scenes/Office/officeCamera.gd" id="2_unbm2"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="6_boyou"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="7_a2sxv"]
 [ext_resource type="AudioStream" uid="uid://df4l45j65cc3p" path="res://Audio/BGM/679167__yipyep__chiptune-type-beat-no-bass.mp3" id="8_xvd0a"]
+[ext_resource type="AudioStream" uid="uid://wcb8ns8e0j72" path="res://Audio/SFX/Menu Click.wav" id="9_unbm2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14mo1"]
 
@@ -310,6 +311,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_xvd0a")
 text = "Example's Bank"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ButtonClickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_unbm2")
 
 [connection signal="pressed" from="MainCamera/FreeRobux/FreeRobux" to="." method="_on_secret_button_pressed"]
 [connection signal="button_down" from="MainCamera/Main Button" to="." method="_on_main_button_button_down"]

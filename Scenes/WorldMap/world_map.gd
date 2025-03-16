@@ -12,8 +12,11 @@ func _ready() -> void:
 	]
 	for map in maps:
 		map.visible = false
-		$GrasslandMap.visible = true
-		current_map = $GrasslandMap
+	$GrasslandMap.visible = true
+	current_map = $GrasslandMap
+	
+	if Globals.planeOwned == true:
+		$AreaSelector.visible = true
 
 func _on_area_selector_item_selected(index: int) -> void:
 	if current_map:
@@ -21,6 +24,7 @@ func _on_area_selector_item_selected(index: int) -> void:
 		
 	current_map = maps[index]
 	current_map.visible = true
+	$ButtonClickSFX.play()
 
 # Music loop
 func _on_audio_stream_player_finished() -> void:

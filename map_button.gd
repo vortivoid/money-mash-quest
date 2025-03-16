@@ -13,6 +13,7 @@ func _ready() -> void:
 # Send player to selected location
 func _on_pressed() -> void:
 	if location:
+		$"../../ButtonClickSFX".play()
 		get_tree().change_scene_to_packed(location)
 
 # Button Scaling

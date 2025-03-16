@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://be08yt3jekosx"]
+[gd_scene load_steps=14 format=3 uid="uid://be08yt3jekosx"]
 
 [ext_resource type="Texture2D" uid="uid://cvxhajk7g5b83" path="res://Backgrounds/mmq-map.png" id="1_iv8dp"]
 [ext_resource type="Script" uid="uid://dpk65r2n3167f" path="res://Scenes/WorldMap/world_map.gd" id="1_qx6hv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d23pfvs3ad0t6" path="res://Backgrounds/mmq-sandland-map.png" id="7_qx6hv"]
 [ext_resource type="PackedScene" uid="uid://bwn4sx63iopgm" path="res://Scenes/Shop/shop.tscn" id="8_cco7p"]
 [ext_resource type="PackedScene" uid="uid://b8eoa8usrok3e" path="res://Scenes/Casino/casino.tscn" id="10_sk4ac"]
+[ext_resource type="AudioStream" uid="uid://wcb8ns8e0j72" path="res://Audio/SFX/Menu Click.wav" id="12_ev1mf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0fsr"]
 
@@ -23,11 +24,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qx6hv")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_b0fsr")
-autoplay = true
-
 [node name="AreaSelector" type="OptionButton" parent="."]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -157,6 +155,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("6_qvxal")
+location = ExtResource("6_ev1mf")
 
 [node name="SandShopButton" type="Button" parent="SandlandMap"]
 anchors_preset = -1
@@ -356,5 +355,12 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("6_qvxal")
 
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[node name="ButtonClickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ev1mf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_b0fsr")
+autoplay = true
+
 [connection signal="item_selected" from="AreaSelector" to="." method="_on_area_selector_item_selected"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://n5b4ermrjhdv"]
+[gd_scene load_steps=9 format=3 uid="uid://n5b4ermrjhdv"]
 
 [ext_resource type="Script" uid="uid://dghds08j2rsx" path="res://Scenes/MainMenu/main_menu.gd" id="1_qgdf6"]
 [ext_resource type="Texture2D" uid="uid://co35ejv7632km" path="res://MMQ Title.png" id="1_uqdog"]
 [ext_resource type="Texture2D" uid="uid://cyibc1gky2pwf" path="res://mmqtitlebg.png" id="2_v763k"]
 [ext_resource type="AudioStream" uid="uid://bg077cus46dmc" path="res://Audio/BGM/656142__josefpres__8-bit-game-loop-008-simple-mix-1-short-120-bpm.wav" id="4_0qgbs"]
+[ext_resource type="AudioStream" uid="uid://wcb8ns8e0j72" path="res://Audio/SFX/Menu Click.wav" id="5_adu2g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v763k"]
 bg_color = Color(0.225629, 0.717315, 0, 1)
@@ -311,6 +312,9 @@ text = "Done"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_0qgbs")
 autoplay = true
+
+[node name="ButtonClickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_adu2g")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
