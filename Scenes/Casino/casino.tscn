@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8eoa8usrok3e"]
+[gd_scene load_steps=12 format=3 uid="uid://b8eoa8usrok3e"]
 
 [ext_resource type="Script" uid="uid://cty3ujr543jqh" path="res://Scenes/Casino/casino.gd" id="1_4sgjb"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_ijs1l"]
@@ -7,10 +7,9 @@
 [ext_resource type="Script" uid="uid://bnhiwqlep1p8j" path="res://Scenes/Casino/gamble.gd" id="4_xaoll"]
 [ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="5_a1nbg"]
 [ext_resource type="Texture2D" uid="uid://dvyhf6rgpnioq" path="res://Icons/Casino/coolergamble.png" id="5_i5meb"]
-[ext_resource type="Script" uid="uid://b0fenkrokgspi" path="res://Scenes/Casino/standard_gamble.gd" id="6_a1vgo"]
-[ext_resource type="Script" uid="uid://crrnc6fs7g5jv" path="res://Scenes/Casino/cooler_gamble.gd" id="8_n2giw"]
 [ext_resource type="Texture2D" uid="uid://bastswx54nqs8" path="res://Backgrounds/CasinoBackground.png" id="9_2codh"]
 [ext_resource type="AudioStream" uid="uid://bjslqntxvpbdp" path="res://Audio/BGM/744187__neko_4444__selection-menu.wav" id="10_2codh"]
+[ext_resource type="AudioStream" uid="uid://bcb72v8xwlap8" path="res://Audio/SFX/You won whore.wav" id="11_bu03g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu03g"]
 bg_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -86,15 +85,20 @@ offset_left = -500.0
 offset_top = -250.0
 offset_right = -340.0
 offset_bottom = -90.0
-tooltip_text = "Possible Prizes:
-1000 coins
-1 Mouse Steroid
-1 AutoClicker"
 theme_override_styles/normal = SubResource("StyleBoxFlat_bu03g")
 icon = ExtResource("3_yujan")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_xaoll")
+roll_range = 3
+money_prize_amount = 1500
+mouse_steroid_prize_amount = 3
+auto_clicker_prize_amount = 3
+gem_prize_amount = 3
+money_prize_enabled = true
+mouse_steroid_prize_enabled = true
+auto_clicker_prize_enabled = true
+gem_prize_enabled = true
 
 [node name="ItemName" type="RichTextLabel" parent="BabyGamble"]
 layout_mode = 1
@@ -132,27 +136,27 @@ text = "1000"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BabyGamble"]
-position = Vector2(-364, -249)
-stream = ExtResource("5_a1nbg")
-volume_db = 9.964
-
 [node name="StandardGamble" type="Button" parent="." groups=["GambleCooldown"]]
 layout_mode = 2
 offset_left = -85.0
 offset_top = -250.0
 offset_right = 75.0
 offset_bottom = -90.0
-tooltip_text = "Possible Prizes:
-10,000 coins
-10-15 Mouse Steroids
-10-15 AutoClickers
-1-3 Gems"
 theme_override_styles/normal = SubResource("StyleBoxFlat_bu03g")
 icon = ExtResource("4_tx8va")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("6_a1vgo")
+script = ExtResource("4_xaoll")
+cost = 10000
+roll_range = 5
+money_prize_amount = 15000
+mouse_steroid_prize_amount = 15
+auto_clicker_prize_amount = 15
+gem_prize_amount = 15
+money_prize_enabled = true
+mouse_steroid_prize_enabled = true
+auto_clicker_prize_enabled = true
+gem_prize_enabled = true
 
 [node name="ItemName" type="RichTextLabel" parent="StandardGamble"]
 layout_mode = 1
@@ -190,27 +194,27 @@ text = "10,000"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StandardGamble"]
-position = Vector2(-364, -249)
-stream = ExtResource("5_a1nbg")
-volume_db = 9.964
-
 [node name="CoolerGamble" type="Button" parent="." groups=["GambleCooldown"]]
 layout_mode = 2
 offset_left = 325.0
 offset_top = -250.0
 offset_right = 485.0
 offset_bottom = -90.0
-tooltip_text = "Possible Prizes:
-100,000 coins
-100-150 Mouse Steroids
-100-150 AutoClickers
-30-50 Gems"
 theme_override_styles/normal = SubResource("StyleBoxFlat_bu03g")
 icon = ExtResource("5_i5meb")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_n2giw")
+script = ExtResource("4_xaoll")
+cost = 100000
+roll_range = 7
+money_prize_amount = 150000
+mouse_steroid_prize_amount = 30
+auto_clicker_prize_amount = 30
+gem_prize_amount = 30
+money_prize_enabled = true
+mouse_steroid_prize_enabled = true
+auto_clicker_prize_enabled = true
+gem_prize_enabled = true
 
 [node name="ItemName" type="RichTextLabel" parent="CoolerGamble"]
 layout_mode = 1
@@ -248,11 +252,6 @@ text = "100,000"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CoolerGamble"]
-position = Vector2(-364, -249)
-stream = ExtResource("5_a1nbg")
-volume_db = 9.964
-
 [node name="CasinoBackground" type="Sprite2D" parent="."]
 self_modulate = Color(0.674815, 0.674815, 0.674815, 1)
 z_index = -5
@@ -265,8 +264,16 @@ metadata/_edit_lock_ = true
 stream = ExtResource("10_2codh")
 autoplay = true
 
+[node name="victorySFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_bu03g")
+
+[node name="failSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_a1nbg")
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="BabyGamble" to="BabyGamble" method="_on_pressed"]
 [connection signal="pressed" from="StandardGamble" to="StandardGamble" method="_on_pressed"]
 [connection signal="pressed" from="CoolerGamble" to="CoolerGamble" method="_on_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="victorySFX" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="failSFX" to="." method="_on_audio_stream_player_finished"]
