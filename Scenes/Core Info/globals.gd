@@ -7,30 +7,30 @@ var autosave_disabled = false
 
 ## Save file variables (Values are just defaults and are replaced by contents of save file on load) ##
 # Main
-var money = 0
-var gems = 0
-var totalCoinsEver = 0
-var playerName = "playerName"
+var money: int = 0
+var gems: int = 0
+var totalCoinsEver: int = 0
+var playerName: String = "playerName"
 
 # Coin Shop Items
-var mouseSteroidsOwned = 0
-var autoClickersOwned = 0
+var mouseSteroidsOwned: int = 0
+var autoClickersOwned: int = 0
 
 # Coin Shop Prices
-var mouseSteroidsPrice = 150
-var autoClickersPrice = 25
+var mouseSteroidsPrice: int = 150
+var autoClickersPrice: int = 25
 
 # Gem Shop Items
-var mouseSteroidsUpgradeOwned = false
-var autoClickerUpgradeOwned = false
-var planeOwned = false
-var gunOwned = false
+var mouseSteroidsUpgradeOwned: bool = false
+var autoClickerUpgradeOwned: bool = false
+var planeOwned: bool = false
+var gunOwned: bool = false
 
 # Gem Shop Prices
-var mouseSteroidsUpgradePrice = 200
-var autoClickerUpgradePrice = 500
-var planePrice = 300
-var gunPrice = 100
+var mouseSteroidsUpgradePrice: int = 300
+var autoClickerUpgradePrice: int = 1000
+var planePrice: int = 200
+var gunPrice: int = 100
 
 # Old Save Info
 var oldSaveVersion = ""
