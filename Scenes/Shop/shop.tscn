@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwn4sx63iopgm"]
+[gd_scene load_steps=9 format=3 uid="uid://bwn4sx63iopgm"]
 
 [ext_resource type="Script" uid="uid://hy01gxse2xtj" path="res://Scenes/Shop/shop.gd" id="1_nl6qo"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_rxyrp"]
 [ext_resource type="Texture2D" uid="uid://5pm2e0wckrf" path="res://Icons/Shop/MouseSteroidsIcon.png" id="2_7rf2c"]
 [ext_resource type="Texture2D" uid="uid://wvy4ogcew6qv" path="res://Icons/Shop/AutoClickerIcon.png" id="3_6ok2j"]
-[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="4_oqg8q"]
 [ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="4_tlsxc"]
 [ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="6_rjc2l"]
 [ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="7_fobo1"]
@@ -20,6 +19,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nl6qo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rjc2l")
+autoplay = true
 
 [node name="MouseSteroids" type="Button" parent="."]
 layout_mode = 2
@@ -94,11 +97,6 @@ theme_override_font_sizes/font_size = 15
 text = "Buy Max"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MouseSteroids"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_oqg8q")
-volume_db = 9.964
 
 [node name="AutoClicker" type="Button" parent="."]
 layout_mode = 2
@@ -175,55 +173,6 @@ text = "Buy Max"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AutoClicker"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_oqg8q")
-volume_db = 9.964
-
-[node name="Layout" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1049.0
-offset_top = 580.0
-offset_right = 1089.0
-offset_bottom = 620.0
-
-[node name="BackButton" type="Button" parent="Layout"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -88.0001
-offset_top = -48.0
-offset_right = 45.0
-offset_bottom = 16.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 20
-text = "Back
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="GemShopButton" type="Button" parent="Layout"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -1.075
-anchor_top = -7.3
-anchor_right = 2.525
-anchor_bottom = -6.275
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 20
-text = "Gem Shop       "
-metadata/_edit_use_anchors_ = true
-
-[node name="GemIcon" type="Sprite2D" parent="Layout/GemShopButton"]
-position = Vector2(124, 21)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("4_tlsxc")
-
 [node name="CoinIcon" type="Sprite2D" parent="."]
 position = Vector2(33, 620)
 scale = Vector2(0.0885714, 0.0885714)
@@ -254,20 +203,56 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 37
 text = "SHOP UNDER DEVELOPMENT!"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_rjc2l")
-autoplay = true
-
 [node name="Mmq-store-background" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(573.111, 325)
 scale = Vector2(0.603704, 0.603704)
 texture = ExtResource("7_fobo1")
 
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -76.0
+offset_right = -18.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Back
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="GemShopButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.07674
+anchor_top = -7.31852
+anchor_right = -0.951736
+anchor_bottom = -7.25525
+offset_left = 2244.4
+offset_top = 5018.4
+offset_right = 2244.4
+offset_bottom = 5018.4
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Gem Shop       "
+metadata/_edit_use_anchors_ = true
+
+[node name="GemIcon" type="Sprite2D" parent="GemShopButton"]
+position = Vector2(124, 21)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_tlsxc")
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="MouseSteroids" to="." method="_on_mouse_steroids_pressed"]
 [connection signal="pressed" from="MouseSteroids/BuyMax" to="." method="_on_buy_max_mousesteroids_pressed"]
 [connection signal="pressed" from="AutoClicker" to="." method="_on_auto_clicker_pressed"]
 [connection signal="pressed" from="AutoClicker/BuyMax" to="." method="_on_buy_max_autoclicker_pressed"]
-[connection signal="pressed" from="Layout/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Layout/GemShopButton" to="." method="_on_gem_shop_button_pressed"]
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="GemShopButton" to="." method="_on_gem_shop_button_pressed"]
