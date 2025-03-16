@@ -246,6 +246,7 @@ pivot_offset = Vector2(79, 28)
 text = "Done"
 
 [node name="Credits" type="Control" parent="."]
+visible = false
 z_index = 1
 layout_mode = 1
 anchor_left = 0.043
