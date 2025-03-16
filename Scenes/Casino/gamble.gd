@@ -21,23 +21,27 @@ extends Button
 @export var gem_prize_enabled: bool = false
 
 var enabled_prizes = []
-
+var tooltip_message = "Possible prizes:\n"
 
 func _ready() -> void:
 	if money_prize_enabled:
 		enabled_prizes.append("money")
+		tooltip_message += (str(money_prize_amount) + " money\n")
 	if mouse_steroid_prize_enabled:
 		enabled_prizes.append("mousesteroid")
+		tooltip_message += (str(mouse_steroid_prize_amount) + " mouse steroids\n")
 	if auto_clicker_prize_enabled:
 		enabled_prizes.append("autoclicker")
+		tooltip_message += (str(auto_clicker_prize_amount) + " auto clickers\n")
 	if gem_prize_enabled:
 		enabled_prizes.append("gem")
+		tooltip_message += (str(gem_prize_amount) + " gems\n")
 
 	if enabled_prizes.size() == 0:
 		print("No prizes enabled")
 		return
 	
-	self.tooltip_text = ("Possible Prizes:\n" + str(money_prize_amount) + " money\n" + str(mouse_steroid_prize_amount) + " mouse steroids\n" + str(auto_clicker_prize_amount) + " auto clickers\n" + str(gem_prize_amount) + " gems")
+	tooltip_text = tooltip_message
 
 func _on_pressed():
 	$"../ResultText".visible = true
