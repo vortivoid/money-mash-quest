@@ -67,7 +67,13 @@ var secret_names = {
 	"Aren't you rich enough already?": ["elon", "musk", "elonmusk"],
 	"Okay but really, what IS the frog doing?": ["watdfrogdoin", "whatthefrogdoing", "whatdafrogdoing", "watdafrogdoin"],
 	"cunt": ["trump", "donaldtrump"],
-	"*dies from dancing too fast*": ["camellia"]
+	"*dies from dancing too fast*": ["camellia"],
+	"egg": ["egg"],
+	"why would you pick this name, litereally nobody likes him. anyway tobias has a big nose [This message was typed by thon, I'm not sure why he hates himself so much]": ["thon"],
+	"why, just why": ["foreskin", "penis"],
+	"the legend 77 herself": ["s7ppy"],
+	"MY MOTHER?!": ["yourmum", "yourmother", "yourmom", "birthlady"],
+	"FINN REFERENCE?!?!?!": ["shark"]
 }
 
 
