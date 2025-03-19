@@ -308,7 +308,7 @@ offset_right = 204.0
 offset_bottom = 18.952
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_xvd0a")
-text = "Example's Bank"
+text = "player_name's Bank"
 horizontal_alignment = 1
 vertical_alignment = 1
 
