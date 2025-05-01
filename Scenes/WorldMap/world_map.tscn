@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://oclgs4fnea55" path="res://Icons/WorldMap/mmq-shop.png" id="6_eteny"]
 [ext_resource type="PackedScene" uid="uid://c4yj3ruae1o2a" path="res://Scenes/Office/office.tscn" id="6_ev1mf"]
 [ext_resource type="Texture2D" uid="uid://elwmy25i86ld" path="res://Icons/WorldMap/mmq-casino.png" id="6_iv8dp"]
-[ext_resource type="Script" uid="uid://c0tqpvd51g7jw" path="res://map_button.gd" id="6_qvxal"]
+[ext_resource type="Script" path="res://map_button.gd" id="6_qvxal"]
 [ext_resource type="Texture2D" uid="uid://d23pfvs3ad0t6" path="res://Backgrounds/mmq-sandland-map.png" id="7_qx6hv"]
 [ext_resource type="PackedScene" uid="uid://bwn4sx63iopgm" path="res://Scenes/Shop/shop.tscn" id="8_cco7p"]
 [ext_resource type="PackedScene" uid="uid://b8eoa8usrok3e" path="res://Scenes/Casino/casino.tscn" id="10_sk4ac"]

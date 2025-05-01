@@ -69,12 +69,12 @@ var secret_names = {
 	"cunt": ["trump", "donaldtrump"],
 	"*dies from dancing too fast*": ["camellia"],
 	"egg": ["egg"],
-	"why would you pick this name, litereally nobody likes him. anyway tobias has a big nose [This message was typed by thon, I'm not sure why he hates himself so much]": ["thon"],
+	"Shouldn't you be playing Papa's Freezeria or smth": ["thon"],
 	"why, just why": ["foreskin", "penis"],
 	"the legend 77 herself": ["s7ppy"],
 	"MY MOTHER?!": ["yourmum", "yourmother", "yourmom", "birthlady"],
 	"FINN REFERENCE?!?!?!": ["shark"],
-	"NOTE: This name will start your game with 1 million moneys :3": ["beans"]
+	"NOTE: This name will start your game with 1 million moneys & gemmies :3": ["beans"]
 }
 
 
