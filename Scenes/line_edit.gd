@@ -73,7 +73,8 @@ var secret_names = {
 	"why, just why": ["foreskin", "penis"],
 	"the legend 77 herself": ["s7ppy"],
 	"MY MOTHER?!": ["yourmum", "yourmother", "yourmom", "birthlady"],
-	"FINN REFERENCE?!?!?!": ["shark"]
+	"FINN REFERENCE?!?!?!": ["shark"],
+	"NOTE: This name will start your game with 1 million moneys :3": ["beans"]
 }
 
 
