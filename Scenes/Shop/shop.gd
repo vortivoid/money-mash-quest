@@ -56,3 +56,5 @@ func UpdateShop():
 
 func _on_audio_stream_player_finished() -> void:
 	$AudioStreamPlayer.play()
+	
+	#TODO Make shop buttons all use a shared script instead of having so much repeated shit dumped in here (do the same for the gem shop too)
