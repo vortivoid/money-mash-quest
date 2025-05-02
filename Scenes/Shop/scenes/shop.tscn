@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bwn4sx63iopgm"]
 
-[ext_resource type="Script" uid="uid://hy01gxse2xtj" path="res://Scenes/Shop/shop.gd" id="1_nl6qo"]
-[ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_rxyrp"]
-[ext_resource type="Texture2D" uid="uid://5pm2e0wckrf" path="res://Icons/Shop/MouseSteroidsIcon.png" id="2_7rf2c"]
-[ext_resource type="Texture2D" uid="uid://wvy4ogcew6qv" path="res://Icons/Shop/AutoClickerIcon.png" id="3_6ok2j"]
-[ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="4_tlsxc"]
-[ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="6_rjc2l"]
-[ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="7_fobo1"]
-[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="8_oqg8q"]
+[ext_resource type="Script" uid="uid://hy01gxse2xtj" path="res://Scenes/Shop/scripts/shop.gd" id="1_1m0j7"]
+[ext_resource type="Texture2D" uid="uid://5pm2e0wckrf" path="res://Icons/Shop/MouseSteroidsIcon.png" id="2_kf8wr"]
+[ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="3_i7d8p"]
+[ext_resource type="Texture2D" uid="uid://wvy4ogcew6qv" path="res://Icons/Shop/AutoClickerIcon.png" id="4_swbw8"]
+[ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="5_qv8xs"]
+[ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="6_26ykt"]
+[ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="7_6387v"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="8_oc6bj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fobo1"]
 bg_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nl6qo")
+script = ExtResource("1_1m0j7")
 
 [node name="MouseSteroids" type="Button" parent="."]
 layout_mode = 2
@@ -29,7 +29,7 @@ offset_right = 335.0
 offset_bottom = 210.0
 tooltip_text = "Multiplies the number of coins you get per click"
 theme_override_styles/normal = SubResource("StyleBoxFlat_fobo1")
-icon = ExtResource("2_7rf2c")
+icon = ExtResource("2_kf8wr")
 expand_icon = true
 
 [node name="ItemName" type="RichTextLabel" parent="MouseSteroids"]
@@ -48,7 +48,7 @@ text = "Mouse Steroids"
 [node name="CoinIcon" type="Sprite2D" parent="MouseSteroids"]
 position = Vector2(35, 189)
 scale = Vector2(0.09, 0.089)
-texture = ExtResource("1_rxyrp")
+texture = ExtResource("3_i7d8p")
 
 [node name="ItemCost" type="RichTextLabel" parent="MouseSteroids/CoinIcon"]
 anchors_preset = -1
@@ -104,7 +104,7 @@ offset_bottom = 210.0
 tooltip_text = "Each auto clicker clicks once per second for you
 (Unaffected by Mouse Steroids without Auto Clicker Upgrade (In Gem Shop))"
 theme_override_styles/normal = SubResource("StyleBoxFlat_fobo1")
-icon = ExtResource("3_6ok2j")
+icon = ExtResource("4_swbw8")
 expand_icon = true
 
 [node name="ItemName" type="RichTextLabel" parent="AutoClicker"]
@@ -123,7 +123,7 @@ text = "Auto-Clicker"
 [node name="CoinIcon" type="Sprite2D" parent="AutoClicker"]
 position = Vector2(32, 192)
 scale = Vector2(0.09, 0.09)
-texture = ExtResource("1_rxyrp")
+texture = ExtResource("3_i7d8p")
 
 [node name="ItemCost" type="RichTextLabel" parent="AutoClicker/CoinIcon"]
 anchors_preset = -1
@@ -173,7 +173,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CoinIcon" type="Sprite2D" parent="."]
 position = Vector2(33, 620)
 scale = Vector2(0.0885714, 0.0885714)
-texture = ExtResource("1_rxyrp")
+texture = ExtResource("3_i7d8p")
 
 [node name="CoinCount" type="RichTextLabel" parent="CoinIcon" groups=["coincounters"]]
 anchors_preset = 5
@@ -204,7 +204,7 @@ text = "SHOP UNDER DEVELOPMENT!"
 z_index = -2
 position = Vector2(573.111, 325)
 scale = Vector2(0.603704, 0.603704)
-texture = ExtResource("7_fobo1")
+texture = ExtResource("5_qv8xs")
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
@@ -244,14 +244,14 @@ metadata/_edit_use_anchors_ = true
 [node name="GemIcon" type="Sprite2D" parent="GemShopButton"]
 position = Vector2(124, 21)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("4_tlsxc")
+texture = ExtResource("6_26ykt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_rjc2l")
+stream = ExtResource("7_6387v")
 autoplay = true
 
 [node name="PurchaseSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_oqg8q")
+stream = ExtResource("8_oc6bj")
 
 [connection signal="pressed" from="MouseSteroids" to="." method="_on_mouse_steroids_pressed"]
 [connection signal="pressed" from="MouseSteroids/BuyMax" to="." method="_on_buy_max_mousesteroids_pressed"]

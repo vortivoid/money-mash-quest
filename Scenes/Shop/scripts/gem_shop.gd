@@ -70,7 +70,7 @@ func UpdateShop(): ### Updates all important variables in the shop such as label
 
 
 func _on_coin_shop_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Shop/shop.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Shop/scenes/shop.tscn")
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
