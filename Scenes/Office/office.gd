@@ -88,7 +88,7 @@ func doautoclick():
 		if Globals.mouseSteroidsOwned == 0:
 			Globals.money += 1
 		else:
-			if Globals.MouseSteroidsUpgradeOwned:
+			if Globals.mouseSteroidsUpgradeOwned == true:
 				Globals.money += ((Globals.mouseSteroidsOwned + 1) * 2)
 			else:
 				Globals.money += (Globals.mouseSteroidsOwned + 1)
