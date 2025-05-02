@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://rf4mp5hdbd1l"]
+
+[ext_resource type="Script" uid="uid://dl48bji200ddy" path="res://Items/item_data.gd" id="1_cac7p"]
+
+[resource]
+script = ExtResource("1_cac7p")
+id = "autoclicker"
+display_name = "AuroClicker"
+price = 5
+metadata/_custom_type_script = "uid://dl48bji200ddy"

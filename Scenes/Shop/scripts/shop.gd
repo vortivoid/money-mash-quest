@@ -14,10 +14,7 @@ func _on_gem_shop_button_pressed():
 
 #Mouse Steroids
 func _on_mouse_steroids_pressed():
-	if Globals.money >= Globals.mouseSteroidsPrice:
-		Globals.money -= Globals.mouseSteroidsPrice
-		Globals.mouseSteroidsOwned += 1
-		$PurchaseSFX.play()
+
 		
 func _on_buy_max_mousesteroids_pressed():
 	while Globals.money >= Globals.mouseSteroidsPrice:
