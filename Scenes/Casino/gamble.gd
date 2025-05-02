@@ -92,9 +92,9 @@ func roll_prize():
 
 
 func money_prize():
-	var money_prize = randi_range(min_money_prize, max_money_prize)
-	Globals.money += money_prize
-	$"../ResultText".text = ("You won " + str(money_prize) + " money!")
+	var prize = randi_range(min_money_prize, max_money_prize)
+	Globals.money += prize
+	$"../ResultText".text = ("You won " + str(prize) + " money!")
 	print("Coin prize!")
 
 func mousesteroid_prize():
@@ -112,8 +112,8 @@ func autoclicker_prize():
 	print("Auto Clicker Prize!")
 
 func gem_prize():
-	var gem_prize = randi_range(min_gem_prize, max_gem_prize)
-	Globals.gems += gem_prize
-	$"../ResultText".text = ("You won " + str(gem_prize) + " Gems!")
+	var prize = randi_range(min_gem_prize, max_gem_prize)
+	Globals.gems += prize
+	$"../ResultText".text = ("You won " + str(prize) + " Gems!")
 	Globals.money -= cost
 	print("Gem Prize!")
