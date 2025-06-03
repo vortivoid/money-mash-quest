@@ -2,10 +2,9 @@ extends LineEdit
 @onready var secret_text = $"../Name Easter Egg Text"
 
 var secret_names = {
+	"NOTE: This name will start your game with 1 million moneys & gemmies :3": ["beans"],
 	"No fucking way it's the person who made me wtffffff???": ["skye", "seppy", "sepskye"],
-	"Fuck off commie.": ["charlac", "plaza", "charlacplaza", "lorddeathkiller"],
 	"I SEE YOU.": ["charliecringe", "charlietheautisticlad"],
-	"Which one though?": ["charlie"],
 	"Shouldn't you be like, sailing the seas and discussing the economy?": ["imp", "string", "longingstring", "longingstring65"],
 	"no way it's DrAgOn Ninja XYZmoc The Meme Thief!!1!": ["moc", "zmoc"],
 	"Cheese Graters, Beans, and a Bin(fx). What more could one want?": ["finn", "finnfx", "binfx"],
@@ -74,7 +73,7 @@ var secret_names = {
 	"the legend 77 herself": ["s7ppy"],
 	"MY MOTHER?!": ["yourmum", "yourmother", "yourmom", "birthlady"],
 	"FINN REFERENCE?!?!?!": ["shark"],
-	"NOTE: This name will start your game with 1 million moneys & gemmies :3": ["beans"]
+	"Looking cool, Joker": ["joker"]
 }
 
 
