@@ -28,6 +28,10 @@ Globals="*res://Scenes/Core Info/globals.gd"
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="Money Mash Quest"
+
 [editor_plugins]
 
 enabled=PackedStringArray()

@@ -62,33 +62,24 @@ offset_bottom = 244.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_spacing = -4
+theme_override_constants/paragraph_spacing = 7
 theme_override_font_sizes/font_size = 15
 text = "Dereton: Infinity
-
-Charlac: ☭
-
-Skye: 7777777
-
+Vorti: 7777777
 DrAgOn Ninja 
 James XYZmoc
 The Meme Thief: 177013
-
 Finnfx: 42069
-
+Lotta: 4444
+Maxi: 4444
 Rev: 1714
-
 Kc: 211
-
 CharlieCringe: 123
-
 Longing String: 65
-
 Thon: Seventen
-
+Kada: 002
 Kneemund: -0
-
 Rug: -1
-
 Goaty: N/A"
 
 [node name="LeaderboardTitle" type="Panel" parent="MainCamera/FakeLeaderboard"]
