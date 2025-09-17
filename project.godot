@@ -28,6 +28,10 @@ Globals="*res://Scenes/Core Info/globals.gd"
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="Money Mash Quest"
+
 [editor_plugins]
 
 enabled=PackedStringArray()
@@ -35,6 +39,10 @@ enabled=PackedStringArray()
 [global_group]
 
 GambleCooldown="Objects that need to be disabled during gambling cooldown"
+
+[gui]
+
+timers/tooltip_delay_sec=0.1
 
 [rendering]
 

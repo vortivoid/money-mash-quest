@@ -16,7 +16,7 @@ func doclick():
 		Globals.money += 1
 		#If player has mouse steroids, checks if they have the mouse steroids upgrade, if so then doubles the output
 	else:
-		if Globals.MouseSteroidsUpgradeOwned == true:
+		if Globals.mouseSteroidsUpgradeOwned == true:
 			Globals.money += ((Globals.mouseSteroidsOwned + 1) * 2)
 		else:
 			Globals.money += (Globals.mouseSteroidsOwned + 1)
@@ -32,11 +32,13 @@ func _on_main_button_pressed():
 
 #Funny epic funny prank haha funny button clicked (defo not a rickroll)
 func _on_secret_button_pressed():
+	$ButtonClickSFX.play()
 	OS.shell_open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 
 #Save button clicked
 func _on_save_data_pressed():
+	$ButtonClickSFX.play()
 	Globals.save()
 	$MainCamera/SaveData/Label.visible = true
 	$MainCamera/SaveData/savetexttime.start()
@@ -50,6 +52,7 @@ func UpdateValues():
 
 #Shop button clicked
 func _on_shop_button_pressed():
+	$ButtonClickSFX.play()
 	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")
 
 
@@ -81,11 +84,11 @@ func _on_auto_click_timer_timeout():
 		
 
 func doautoclick():
-	if Globals.AutoClickerUpgradeOwned:
+	if Globals.autoClickerUpgradeOwned:
 		if Globals.mouseSteroidsOwned == 0:
 			Globals.money += 1
 		else:
-			if Globals.MouseSteroidsUpgradeOwned:
+			if Globals.mouseSteroidsUpgradeOwned == true:
 				Globals.money += ((Globals.mouseSteroidsOwned + 1) * 2)
 			else:
 				Globals.money += (Globals.mouseSteroidsOwned + 1)
@@ -110,5 +113,6 @@ func _on_savetexttime_timeout() -> void:
 
 
 func _on_main_menu_button_pressed() -> void:
+	$ButtonClickSFX.play()
 	Globals.save()
 	get_tree().change_scene_to_file("res://Scenes/MainMenu/main_menu.tscn")

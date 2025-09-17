@@ -1,36 +1,36 @@
 ### This script stores all the info in the game that should be saved when saving the game, as well as storing values for other scripts to access ###
 extends Node
 
-var gameVer = "Alpha 1.8.2"
+var gameVer = "Alpha 1.9.0"
 const save_path = "user://save.data"
 var autosave_disabled = false
 
 ## Save file variables (Values are just defaults and are replaced by contents of save file on load) ##
 # Main
-var money = 0
-var gems = 0
-var totalCoinsEver = 0
-var playerName = "playerName"
+var money: int = 0
+var gems: int = 0
+var totalCoinsEver: int = 0
+var playerName: String = "playerName"
 
 # Coin Shop Items
-var mouseSteroidsOwned = 0
-var autoClickersOwned = 0
+var mouseSteroidsOwned: int = 0
+var autoClickersOwned: int = 0
 
 # Coin Shop Prices
-var mouseSteroidsPrice = 150
-var autoClickersPrice = 25
+var mouseSteroidsPrice: int = 150
+var autoClickersPrice: int = 25
 
 # Gem Shop Items
-var MouseSteroidsUpgradeOwned = false
-var AutoClickerUpgradeOwned = false
-var planeOwned = false
-var gunOwned = false
+var mouseSteroidsUpgradeOwned: bool = false
+var autoClickerUpgradeOwned: bool = false
+var planeOwned: bool = false
+var gunOwned: bool = false
 
 # Gem Shop Prices
-var mouseSteroidsUpgradePrice = 200
-var autoClickerUpgradePrice = 500
-var planePrice = 300
-var gunPrice = 100
+var mouseSteroidsUpgradePrice: int = 300
+var autoClickerUpgradePrice: int = 1000
+var planePrice: int = 200
+var gunPrice: int = 100
 
 # Old Save Info
 var oldSaveVersion = ""
@@ -48,6 +48,8 @@ func save():
 		"items_owned": {
 			"mouseSteroidsOwned": mouseSteroidsOwned,
 			"autoClickersOwned": autoClickersOwned,
+			"mouseSteroidsUpgradeOwned": mouseSteroidsOwned,
+			"autoClickerUpgradeOwned": autoClickerUpgradeOwned,
 			"planeOwned": planeOwned,
 			"gunOwned": gunOwned,
 		}
@@ -78,6 +80,8 @@ func loadsave():
 		var items_owned = game_data.get("items_owned", {})
 		mouseSteroidsOwned = items_owned.get("mouseSteroidsOwned", 0)
 		autoClickersOwned = items_owned.get("autoClickersOwned", 0)
+		autoClickerUpgradeOwned = items_owned.get("autoClickerUpgradeOwned", false)
+		mouseSteroidsUpgradeOwned = items_owned.get("mouseSteroidsUpgradeOwned", false)
 		planeOwned = items_owned.get("planeOwned", false)
 		gunOwned = items_owned.get("gunOwned", false)
 		

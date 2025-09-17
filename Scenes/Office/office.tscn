@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4yj3ruae1o2a"]
+[gd_scene load_steps=12 format=3 uid="uid://c4yj3ruae1o2a"]
 
 [ext_resource type="Script" uid="uid://bnf5bpphmcvd" path="res://Scenes/Office/office.gd" id="1_xvd0a"]
 [ext_resource type="Script" uid="uid://bs5bww03eoy5k" path="res://Scenes/Office/officeCamera.gd" id="2_unbm2"]
 [ext_resource type="Texture2D" uid="uid://cqesbvxny8xjt" path="res://Icons/Main/10.jpg" id="3_q58a0"]
 [ext_resource type="Texture2D" uid="uid://gssa8bf510pq" path="res://Icons/Main/ScreamEmoji.png" id="4_hoad8"]
 [ext_resource type="Texture2D" uid="uid://dj5npoy0uxnkv" path="res://Icons/Main/mmq-money-icon.png" id="5_dd2rk"]
-[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="6_boyou"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="6_boyou"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="7_a2sxv"]
 [ext_resource type="AudioStream" uid="uid://df4l45j65cc3p" path="res://Audio/BGM/679167__yipyep__chiptune-type-beat-no-bass.mp3" id="8_xvd0a"]
+[ext_resource type="AudioStream" uid="uid://wcb8ns8e0j72" path="res://Audio/SFX/Menu Click.wav" id="9_unbm2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14mo1"]
 
@@ -61,33 +62,24 @@ offset_bottom = 244.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_spacing = -4
+theme_override_constants/paragraph_spacing = 7
 theme_override_font_sizes/font_size = 15
 text = "Dereton: Infinity
-
-Charlac: ☭
-
-Skye: 7777777
-
+Vorti: 7777777
 DrAgOn Ninja 
 James XYZmoc
 The Meme Thief: 177013
-
 Finnfx: 42069
-
+Lotta: 4444
+Maxi: 4444
 Rev: 1714
-
 Kc: 211
-
 CharlieCringe: 123
-
 Longing String: 65
-
 Thon: Seventen
-
+Kada: 002
 Kneemund: -0
-
 Rug: -1
-
 Goaty: N/A"
 
 [node name="LeaderboardTitle" type="Panel" parent="MainCamera/FakeLeaderboard"]
@@ -307,9 +299,12 @@ offset_right = 204.0
 offset_bottom = 18.952
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_xvd0a")
-text = "Example's Bank"
+text = "player_name's Bank"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ButtonClickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_unbm2")
 
 [connection signal="pressed" from="MainCamera/FreeRobux/FreeRobux" to="." method="_on_secret_button_pressed"]
 [connection signal="button_down" from="MainCamera/Main Button" to="." method="_on_main_button_button_down"]

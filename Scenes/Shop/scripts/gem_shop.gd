@@ -11,8 +11,8 @@ func _process(_delta):
 func _on_auto_clicker_upgrade_pressed():
 	if Globals.gems >= Globals.autoClickerUpgradePrice:
 		Globals.gems -= Globals.autoClickerUpgradePrice
-		Globals.AutoClickerUpgradeOwned = true
-		$AutoClickerUpgrade/AudioStreamPlayer2D.play()
+		Globals.autoClickerUpgradeOwned = true
+		$PurchaseSFX.play()
 
 func _on_plane_pressed():
 	if Globals.planeOwned == true:
@@ -22,13 +22,13 @@ func _on_plane_pressed():
 			Globals.gems -= Globals.planePrice
 			Globals.planeOwned = true
 			UpdateShop()
-			$Plane/AudioStreamPlayer2D.play()
+			$PurchaseSFX.play()
 
 func _on_mouse_steroids_upgrade_button_pressed():
 	if Globals.gems >= Globals.mouseSteroidsUpgradePrice:
 		Globals.gems -= Globals.mouseSteroidsUpgradePrice
-		Globals.MouseSteroidsUpgradeOwned = true
-		$MouseSteroidsUpgradeButton/AudioStreamPlayer2D.play()
+		Globals.mouseSteroidsUpgradeOwned = true
+		$PurchaseSFX.play()
 
 func _on_gun_pressed():
 	if Globals.gunOwned == true:
@@ -37,17 +37,17 @@ func _on_gun_pressed():
 		if Globals.gems >= Globals.gunPrice:
 			Globals.gems -= Globals.gunPrice
 			Globals.gunOwned = true
-			$Gun/AudioStreamPlayer2D.play()
+			$PurchaseSFX.play()
 
 ## Other stuff
 func UpdateShop(): ### Updates all important variables in the shop such as labels displaying item costs ###
-	if Globals.MouseSteroidsUpgradeOwned:
+	if Globals.mouseSteroidsUpgradeOwned:
 		$MouseSteroidsUpgradeButton.disabled = true
 		$MouseSteroidsUpgradeButton/GemIcon/ItemCost.text = "Owned!"
 	else:
 
 		$MouseSteroidsUpgradeButton/GemIcon/ItemCost.text = str(Globals.mouseSteroidsUpgradePrice)
-	if Globals.AutoClickerUpgradeOwned:
+	if Globals.autoClickerUpgradeOwned:
 		$AutoClickerUpgrade.disabled = true
 		$AutoClickerUpgrade/GemIcon/ItemCost.text = "Owned!"
 	else:
@@ -70,7 +70,7 @@ func UpdateShop(): ### Updates all important variables in the shop such as label
 
 
 func _on_coin_shop_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Shop/shop.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Shop/scenes/shop.tscn")
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/WorldMap/world_map.tscn")

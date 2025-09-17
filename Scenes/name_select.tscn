@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hq71nacofn20"]
 
-[ext_resource type="Script" uid="uid://c3wtknhtosi51" path="res://name_select.gd" id="1_b4sja"]
+[ext_resource type="Script" uid="uid://c3wtknhtosi51" path="res://Scripts/name_select.gd" id="1_b4sja"]
 [ext_resource type="Script" uid="uid://0g26x5s8ybya" path="res://Scenes/line_edit.gd" id="2_prfkr"]
 
 [node name="NameSelect" type="Control"]

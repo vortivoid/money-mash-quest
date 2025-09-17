@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://bqeqmesqlhd1d"]
 
-[ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="1_0edds"]
-[ext_resource type="Script" uid="uid://e1cv5pryduii" path="res://Scenes/Shop/gem_shop.gd" id="1_jygbo"]
-[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="4_b3ub6"]
-[ext_resource type="Texture2D" uid="uid://7ia6hbpwp5r1" path="res://Icons/Shop/Planeicon.png" id="4_c15rh"]
-[ext_resource type="Texture2D" uid="uid://cycwf88n87lw7" path="res://Icons/Shop/MouseSteroidsUpgrade.png" id="4_k1jnj"]
-[ext_resource type="Texture2D" uid="uid://bemuu166lbeye" path="res://Icons/Shop/AutoClickerUpgrade.png" id="5_ik7nt"]
-[ext_resource type="Texture2D" uid="uid://b7ddi1muicnmx" path="res://Icons/Shop/LiteralGunIcon.png" id="5_t8c0s"]
-[ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="6_bx7a7"]
-[ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="8_4nlap"]
-[ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="9_emegm"]
+[ext_resource type="Script" uid="uid://e1cv5pryduii" path="res://Scenes/Shop/scripts/gem_shop.gd" id="1_clqg5"]
+[ext_resource type="Texture2D" uid="uid://cycwf88n87lw7" path="res://Icons/Shop/MouseSteroidsUpgrade.png" id="2_028g4"]
+[ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="3_crrmr"]
+[ext_resource type="Texture2D" uid="uid://bemuu166lbeye" path="res://Icons/Shop/AutoClickerUpgrade.png" id="4_x81ol"]
+[ext_resource type="Texture2D" uid="uid://b7ddi1muicnmx" path="res://Icons/Shop/LiteralGunIcon.png" id="5_gdmx7"]
+[ext_resource type="Texture2D" uid="uid://7ia6hbpwp5r1" path="res://Icons/Shop/Planeicon.png" id="6_0ksty"]
+[ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="7_57kya"]
+[ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="8_r8lfr"]
+[ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="9_bmvxa"]
+[ext_resource type="AudioStream" uid="uid://x5bjbwnpmbu2" path="res://Audio/SFX/y2mate.is - Cash Money Sound Effect-K20pt6xVet0-48k-1695147773-[AudioTrimmer.com].mp3" id="10_cx6ur"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emegm"]
 bg_color = Color(0.912289, 0.912289, 0.912289, 1)
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jygbo")
+script = ExtResource("1_clqg5")
 
 [node name="MouseSteroidsUpgradeButton" type="Button" parent="."]
 layout_mode = 2
@@ -31,7 +31,7 @@ offset_right = 335.0
 offset_bottom = 210.0
 tooltip_text = "Doubles the effectiveness of Mouse Steroids"
 theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
-icon = ExtResource("4_k1jnj")
+icon = ExtResource("2_028g4")
 icon_alignment = 1
 expand_icon = true
 
@@ -54,7 +54,7 @@ metadata/_edit_use_anchors_ = true
 [node name="GemIcon" type="Sprite2D" parent="MouseSteroidsUpgradeButton"]
 position = Vector2(35, 194)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_bx7a7")
+texture = ExtResource("3_crrmr")
 
 [node name="ItemCost" type="RichTextLabel" parent="MouseSteroidsUpgradeButton/GemIcon"]
 anchors_preset = -1
@@ -72,11 +72,6 @@ theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MouseSteroidsUpgradeButton"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_b3ub6")
-volume_db = 9.964
-
 [node name="AutoClickerUpgrade" type="Button" parent="."]
 layout_mode = 2
 offset_left = 500.0
@@ -85,7 +80,7 @@ offset_right = 660.0
 offset_bottom = 210.0
 tooltip_text = "Gives Auto Clickers the ability to make use of Mouse Steroids"
 theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
-icon = ExtResource("5_ik7nt")
+icon = ExtResource("4_x81ol")
 icon_alignment = 1
 expand_icon = true
 
@@ -106,7 +101,7 @@ metadata/_edit_use_anchors_ = true
 [node name="GemIcon" type="Sprite2D" parent="AutoClickerUpgrade"]
 position = Vector2(35, 194)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_bx7a7")
+texture = ExtResource("3_crrmr")
 
 [node name="ItemCost" type="RichTextLabel" parent="AutoClickerUpgrade/GemIcon"]
 anchors_preset = -1
@@ -124,11 +119,6 @@ theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AutoClickerUpgrade"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_b3ub6")
-volume_db = 9.964
-
 [node name="Gun" type="Button" parent="."]
 layout_mode = 2
 offset_left = 850.0
@@ -137,7 +127,7 @@ offset_right = 1010.0
 offset_bottom = 210.0
 tooltip_text = "[Use Currently Unimplemented]"
 theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
-icon = ExtResource("5_t8c0s")
+icon = ExtResource("5_gdmx7")
 icon_alignment = 1
 expand_icon = true
 
@@ -160,7 +150,7 @@ metadata/_edit_use_anchors_ = true
 [node name="GemIcon" type="Sprite2D" parent="Gun"]
 position = Vector2(35, 194)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_bx7a7")
+texture = ExtResource("3_crrmr")
 
 [node name="ItemCost" type="RichTextLabel" parent="Gun/GemIcon"]
 anchors_preset = -1
@@ -178,11 +168,6 @@ theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Gun"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_b3ub6")
-volume_db = 9.964
-
 [node name="Plane" type="Button" parent="."]
 layout_mode = 2
 offset_left = 175.0
@@ -191,7 +176,7 @@ offset_right = 335.0
 offset_bottom = 483.0
 tooltip_text = "[Use Currently Unimplemented]"
 theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
-icon = ExtResource("4_c15rh")
+icon = ExtResource("6_0ksty")
 icon_alignment = 1
 expand_icon = true
 
@@ -214,7 +199,7 @@ metadata/_edit_use_anchors_ = true
 [node name="GemIcon" type="Sprite2D" parent="Plane"]
 position = Vector2(35, 194)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_bx7a7")
+texture = ExtResource("3_crrmr")
 
 [node name="ItemCost" type="RichTextLabel" parent="Plane/GemIcon"]
 anchors_preset = -1
@@ -231,11 +216,6 @@ scale = Vector2(0.860303, 0.897695)
 theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Plane"]
-position = Vector2(-364, -249)
-stream = ExtResource("4_b3ub6")
-volume_db = 9.964
 
 [node name="Layout" type="Control" parent="."]
 layout_mode = 3
@@ -280,12 +260,12 @@ metadata/_edit_use_anchors_ = true
 [node name="GemIcon" type="Sprite2D" parent="Layout/CoinShopButton"]
 position = Vector2(124, 21)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_0edds")
+texture = ExtResource("7_57kya")
 
 [node name="GemIcon" type="Sprite2D" parent="."]
 position = Vector2(33, 620)
 scale = Vector2(0.0885714, 0.0885714)
-texture = ExtResource("6_bx7a7")
+texture = ExtResource("3_crrmr")
 
 [node name="GemCount" type="RichTextLabel" parent="GemIcon" groups=["gemcounters"]]
 anchors_preset = 5
@@ -313,14 +293,17 @@ theme_override_font_sizes/normal_font_size = 37
 text = "SHOP UNDER DEVELOPMENT!"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_4nlap")
+stream = ExtResource("8_r8lfr")
 autoplay = true
 
 [node name="Mmq-store-background" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(573.111, 325)
 scale = Vector2(0.603704, 0.603704)
-texture = ExtResource("9_emegm")
+texture = ExtResource("9_bmvxa")
+
+[node name="PurchaseSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_cx6ur")
 
 [connection signal="pressed" from="MouseSteroidsUpgradeButton" to="." method="_on_mouse_steroids_upgrade_button_pressed"]
 [connection signal="pressed" from="AutoClickerUpgrade" to="." method="_on_auto_clicker_upgrade_pressed"]
