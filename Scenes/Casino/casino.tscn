@@ -80,7 +80,7 @@ text = "Back
 "
 
 [node name="BabyGamble" type="Button" parent="." groups=["GambleCooldown"]]
-layout_mode = 2
+layout_mode = 0
 offset_left = -500.0
 offset_top = -250.0
 offset_right = -340.0
@@ -138,7 +138,7 @@ fit_content = true
 metadata/_edit_use_anchors_ = true
 
 [node name="StandardGamble" type="Button" parent="." groups=["GambleCooldown"]]
-layout_mode = 2
+layout_mode = 0
 offset_left = -85.0
 offset_top = -250.0
 offset_right = 75.0
@@ -197,7 +197,7 @@ fit_content = true
 metadata/_edit_use_anchors_ = true
 
 [node name="CoolerGamble" type="Button" parent="." groups=["GambleCooldown"]]
-layout_mode = 2
+layout_mode = 0
 offset_left = 325.0
 offset_top = -250.0
 offset_right = 485.0
@@ -265,6 +265,7 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2codh")
+volume_db = -7.0
 autoplay = true
 
 [node name="victorySFX" type="AudioStreamPlayer" parent="."]

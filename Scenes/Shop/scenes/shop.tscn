@@ -22,7 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_1m0j7")
 
 [node name="MouseSteroids" type="Button" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 175.0
 offset_top = 50.0
 offset_right = 335.0
@@ -96,7 +96,7 @@ expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="AutoClicker" type="Button" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 500.0
 offset_top = 50.0
 offset_right = 660.0
@@ -187,18 +187,6 @@ grow_horizontal = 2
 scale = Vector2(0.860303, 0.897695)
 theme_override_font_sizes/normal_font_size = 400
 text = "0"
-
-[node name="SHOP_DISCLAIMER" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 284.0
-offset_top = 588.0
-offset_right = 818.0
-offset_bottom = 645.0
-theme_override_colors/default_color = Color(1, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 37
-text = "SHOP UNDER DEVELOPMENT!"
 
 [node name="Mmq-store-background" type="Sprite2D" parent="."]
 z_index = -2

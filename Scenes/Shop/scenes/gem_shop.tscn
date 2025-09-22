@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqeqmesqlhd1d"]
+[gd_scene load_steps=10 format=3 uid="uid://bqeqmesqlhd1d"]
 
 [ext_resource type="Script" uid="uid://e1cv5pryduii" path="res://Scenes/Shop/scripts/gem_shop.gd" id="1_clqg5"]
 [ext_resource type="Texture2D" uid="uid://cycwf88n87lw7" path="res://Icons/Shop/MouseSteroidsUpgrade.png" id="2_028g4"]
 [ext_resource type="Texture2D" uid="uid://bji01s8psya28" path="res://Icons/Shop/GemIcon.png" id="3_crrmr"]
 [ext_resource type="Texture2D" uid="uid://bemuu166lbeye" path="res://Icons/Shop/AutoClickerUpgrade.png" id="4_x81ol"]
-[ext_resource type="Texture2D" uid="uid://b7ddi1muicnmx" path="res://Icons/Shop/LiteralGunIcon.png" id="5_gdmx7"]
-[ext_resource type="Texture2D" uid="uid://7ia6hbpwp5r1" path="res://Icons/Shop/Planeicon.png" id="6_0ksty"]
 [ext_resource type="Texture2D" uid="uid://di5pgyor37kst" path="res://Icons/Shop/CoinIcon.png" id="7_57kya"]
 [ext_resource type="AudioStream" uid="uid://b8txp8srxjqya" path="res://Audio/BGM/516738__mvrasseli__funky-loop.wav" id="8_r8lfr"]
 [ext_resource type="Texture2D" uid="uid://dfhwfm7wsg6fc" path="res://Backgrounds/mmq-store-background.png" id="9_bmvxa"]
@@ -24,7 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_clqg5")
 
 [node name="MouseSteroidsUpgradeButton" type="Button" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 175.0
 offset_top = 50.0
 offset_right = 335.0
@@ -73,7 +71,7 @@ text = "Value"
 metadata/_edit_use_anchors_ = true
 
 [node name="AutoClickerUpgrade" type="Button" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 500.0
 offset_top = 50.0
 offset_right = 660.0
@@ -119,106 +117,7 @@ theme_override_font_sizes/normal_font_size = 300
 text = "Value"
 metadata/_edit_use_anchors_ = true
 
-[node name="Gun" type="Button" parent="."]
-layout_mode = 2
-offset_left = 850.0
-offset_top = 50.0
-offset_right = 1010.0
-offset_bottom = 210.0
-tooltip_text = "[Use Currently Unimplemented]"
-theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
-icon = ExtResource("5_gdmx7")
-icon_alignment = 1
-expand_icon = true
-
-[node name="ItemName" type="RichTextLabel" parent="Gun"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.34975
-anchor_top = -0.237
-anchor_right = 0.6935
-anchor_bottom = -0.012
-offset_left = 0.0400085
-offset_top = -0.079998
-offset_right = 0.039978
-offset_bottom = -0.0799999
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 25
-text = "Gun"
-metadata/_edit_use_anchors_ = true
-
-[node name="GemIcon" type="Sprite2D" parent="Gun"]
-position = Vector2(35, 194)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_crrmr")
-
-[node name="ItemCost" type="RichTextLabel" parent="Gun/GemIcon"]
-anchors_preset = -1
-anchor_left = 1.016
-anchor_top = 0.194
-anchor_right = 2.72486
-anchor_bottom = 0.777286
-offset_left = -350.2
-offset_top = -349.8
-offset_right = -210.4
-offset_bottom = -330.1
-grow_horizontal = 2
-scale = Vector2(0.860303, 0.897695)
-theme_override_font_sizes/normal_font_size = 300
-text = "Value"
-metadata/_edit_use_anchors_ = true
-
-[node name="Plane" type="Button" parent="."]
-layout_mode = 2
-offset_left = 175.0
-offset_top = 323.0
-offset_right = 335.0
-offset_bottom = 483.0
-tooltip_text = "[Use Currently Unimplemented]"
-theme_override_styles/normal = SubResource("StyleBoxFlat_emegm")
-icon = ExtResource("6_0ksty")
-icon_alignment = 1
-expand_icon = true
-
-[node name="ItemName" type="RichTextLabel" parent="Plane"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.281
-anchor_top = -0.23075
-anchor_right = 0.731
-anchor_bottom = -0.00575
-offset_left = 0.0400085
-offset_top = -0.079998
-offset_right = 0.039978
-offset_bottom = -0.0799999
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 25
-text = "Plane"
-metadata/_edit_use_anchors_ = true
-
-[node name="GemIcon" type="Sprite2D" parent="Plane"]
-position = Vector2(35, 194)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_crrmr")
-
-[node name="ItemCost" type="RichTextLabel" parent="Plane/GemIcon"]
-anchors_preset = -1
-anchor_left = 1.016
-anchor_top = 0.194
-anchor_right = 2.72486
-anchor_bottom = 0.777286
-offset_left = -350.2
-offset_top = -349.8
-offset_right = -210.4
-offset_bottom = -330.1
-grow_horizontal = 2
-scale = Vector2(0.860303, 0.897695)
-theme_override_font_sizes/normal_font_size = 300
-text = "Value"
-metadata/_edit_use_anchors_ = true
-
 [node name="Layout" type="Control" parent="."]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 1049.0
 offset_top = 580.0
@@ -280,18 +179,6 @@ scale = Vector2(0.860303, 0.897695)
 theme_override_font_sizes/normal_font_size = 400
 text = "0"
 
-[node name="SHOP_DISCLAIMER" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 284.0
-offset_top = 588.0
-offset_right = 818.0
-offset_bottom = 645.0
-theme_override_colors/default_color = Color(1, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 37
-text = "SHOP UNDER DEVELOPMENT!"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_r8lfr")
 autoplay = true
@@ -307,8 +194,6 @@ stream = ExtResource("10_cx6ur")
 
 [connection signal="pressed" from="MouseSteroidsUpgradeButton" to="." method="_on_mouse_steroids_upgrade_button_pressed"]
 [connection signal="pressed" from="AutoClickerUpgrade" to="." method="_on_auto_clicker_upgrade_pressed"]
-[connection signal="pressed" from="Gun" to="." method="_on_gun_pressed"]
-[connection signal="pressed" from="Plane" to="." method="_on_plane_pressed"]
 [connection signal="pressed" from="Layout/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Layout/CoinShopButton" to="." method="_on_coin_shop_button_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
