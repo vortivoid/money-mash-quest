@@ -1,7 +1,7 @@
 ### This script stores all the info in the game that should be saved when saving the game, as well as storing values for other scripts to access ###
 extends Node
 
-var gameVer = "Release 1.0.0"
+var gameVer = "Release 1.0.2"
 const save_path = "user://save.data"
 var autosave_disabled = false
 
@@ -48,7 +48,7 @@ func save():
 		"items_owned": {
 			"mouseSteroidsOwned": mouseSteroidsOwned,
 			"autoClickersOwned": autoClickersOwned,
-			"mouseSteroidsUpgradeOwned": mouseSteroidsOwned,
+			"mouseSteroidsUpgradeOwned": mouseSteroidsUpgradeOwned,
 			"autoClickerUpgradeOwned": autoClickerUpgradeOwned,
 			"planeOwned": planeOwned,
 			"gunOwned": gunOwned,

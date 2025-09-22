@@ -5,7 +5,7 @@ extends Control
 func _ready() -> void:
 	var errorLabel = $Text
 	if Label:
-		errorLabel.text = ("WARNING!\n\nYour existing save file is from version " + Globals.oldSaveVersion + " but you are running version " + Globals.gameVer + "\n\nMoney Mash Quest is still in alpha and issues are likely to arise between updates. It is reccomended that you delete your old save.")
+		errorLabel.text = ("WARNING!\n\nYour existing save file is from version " + Globals.oldSaveVersion + " but you are running version " + Globals.gameVer + "\n\nMoney Mash Quest may have some breaking bugs between updates, especially from alpha versions. It is reccomended that you delete your old save.")
 
 
 func _on_continue_pressed() -> void:
